@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from PAGES.StartPage import StartPage
-from PAGES.IncomePage import IncomePage
 from PAGES.RecoveryPage import RecoveryPage
 from PAGES.RegisterPage import RegisterPage
 
@@ -36,12 +35,6 @@ def browser():
 def startpage(browser):
     start_page = StartPage(browser)
     return start_page
-
-
-@pytest.fixture(scope="function")
-def incomepage(browser):
-    income_page = IncomePage(browser)
-    return income_page
 
 
 @pytest.fixture(scope="function")
