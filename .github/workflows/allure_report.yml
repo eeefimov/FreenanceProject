@@ -1,4 +1,4 @@
-name: setup
+name: report
 
 on:
   push:
