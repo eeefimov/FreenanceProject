@@ -2,7 +2,7 @@ name: Start tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "startpage_recovery_register" ]
   pull_request:
     branches: [ "master" ]
 
