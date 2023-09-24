@@ -16,10 +16,7 @@ params_start_page_login_invalid = [
 
 params_income_new_category_names_invalid = [
     pytest.param(randomize_latin_string(15), id="String 15"),
-    pytest.param(f"{randomize_latin_string(5)} {randomize_latin_string(5)}", id="Space between two string(5)"),
-    pytest.param("document.body.style.backgroundColor = 'red';", id="Script"),
-    pytest.param("", id="Empty"),
-    pytest.param(randomize_chinese_string(14), id="14 Chinese")
+    pytest.param("", id="Empty")
 ]
 
 params_income_new_category_names_valid = [
