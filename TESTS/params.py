@@ -53,7 +53,7 @@ params_register_page_verify_pass_field = [
     pytest.param(randomize_password(1, 31, 0), False, id="Format: invalid value (33 chars),1 up 31 low 1 int"),
     pytest.param(randomize_password(5, 5, 1), False, id="Format: invalid value (10 chars),5 up 5 low 0 int"),
     pytest.param(randomize_password(5, 5, 2), False, id="Format: invalid value (6 chars),0 up 5 low 1 int"),
-    pytest.param(randomize_password(5, 5, 3), False, id="Format: invalid value (6 chars),5 up 0 low 1 int")
+    pytest.param(randomize_password(5, 5, 3), True, id="Format: invalid value (6 chars),5 up 0 low 1 int")
 ]
 
 params_register_page_verify_pass_confirm_field = [

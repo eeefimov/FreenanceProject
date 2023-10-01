@@ -59,15 +59,15 @@ class TestRegisterPage:
     @allure.title("Verify Login Field on Register Page")
     @allure.feature("Login field error")
     @allure.description("""
-        Verify the login field on the Register Page with different values.
-        If value is no valid, proper error message should be displayed.
+    Verify the login field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
 
-        Precondition:
-        - User is on the Register Page.
+    Precondition:
+    - User is on the Register Page.
 
-        Expected Result:
-        - If value is not match with proper requirements for login,
-        an error message should be displayed as specified in 'error'.
+    Expected Result:
+    - If value is not match with proper requirements for login,
+    an error message should be displayed as specified in 'error'.
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("value, expected", params_register_page_verify_login_field)
@@ -77,15 +77,15 @@ class TestRegisterPage:
     @allure.title("Verify Password Field on Register Page")
     @allure.feature("Password field error")
     @allure.description("""
-        Verify the password field on the Register Page with different values.
-        If value is no valid, proper error message should be displayed.
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
 
-        Precondition:
-        - User is on the Register Page.
+    Precondition:
+    - User is on the Register Page.
 
-        Expected Result:
-        - If value is not match with proper requirements for password,
-        an error message should be displayed as specified in 'error'.
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("value, expected", params_register_page_verify_pass_field)
@@ -94,15 +94,16 @@ class TestRegisterPage:
 
     @allure.title("Verify Password Confirmation Field on Register Page")
     @allure.description("""
-        Verify the password confirmation field on the Register Page.
+    Verify the password confirmation field on the Register Page.
 
-        Precondition:
-        - User is on the Register Page.
+    Precondition:
+    - User is on the Register Page.
 
-        Expected Result:
-        - If values is not match in both fields (for password and confirm),
-        an error message should be displayed as specified in 'error'.
+    Expected Result:
+    - If values is not match in both fields (for password and confirm),
+    an error message should be displayed as specified in 'error'.
     """)
+    @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("val, expected, validation", params_register_page_verify_pass_confirm_field)
     def test_register_password_confirm(self, registerpage, val, expected, validation):
         registerpage.register_check_verify_pass_confirm(val, expected, validation)
@@ -110,20 +111,20 @@ class TestRegisterPage:
     @allure.title("Register with Existing User")
     @allure.feature("exist user registration error")
     @allure.description("""
-        Attempt to register with an existing user's credentials.
-        Proper error message should be showed.
+    Attempt to register with an existing user's credentials.
+    Proper error message should be showed.
 
-        Precondition:
-        - User is on the Register Page.
-        - User is all ready registered in the system.
+    Precondition:
+    - User is on the Register Page.
+    - User is all ready registered in the system.
 
-        PostCondition:
-        - User is not re registered.
-        - User is on the Registration Page.
+    PostCondition:
+    - User is not re registered.
+    - User is on the Registration Page.
 
-        Expected Result:
-        - Registration should not be successful.
-        - Error message should be showed if user use exist login or email.
+    Expected Result:
+    - Registration should not be successful.
+    - Error message should be showed if user use exist login or email.
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("email, login, pwd", params_register_page_exist_user_values)

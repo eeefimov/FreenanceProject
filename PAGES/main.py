@@ -2,6 +2,11 @@ from selenium.webdriver.support.ui import WebDriverWait as WdW
 from selenium.webdriver.support import expected_conditions as Ec
 from selenium.common import ElementNotVisibleException, NoSuchElementException, TimeoutException
 import allure
+import time
+from datetime import datetime
+from TESTS.utils import randomize_latin_string
+from selenium.webdriver.support.ui import WebDriverWait as WdW
+from selenium.webdriver.support import expected_conditions as Ec
 
 
 class Main:
@@ -36,6 +41,10 @@ class Main:
         """
         with allure.step(f"Click '{name_element}'"):
             WdW(self.driver, 20).until(Ec.presence_of_element_located(by_locator)).click()
+
+    def do_list_item_delete_click(self, by_locator):
+        with allure.step(f"Click 'x' infront of category name in the list"):
+            WdW(self.driver, 20).until(Ec.element_to_be_clickable(by_locator)).click()
 
     def do_element_send_keys(self, locator_name: str, by_locator, text_keys) -> None:
         with allure.step(f"Send {text_keys} to {locator_name} field"):
@@ -82,7 +91,7 @@ class Main:
         """
         Creates and returns a WebDriverWait instance with custom exceptions.
         """
-        wait = WdW(self.driver, timeout=2, poll_frequency=1,
+        wait = WdW(self.driver, timeout=3, poll_frequency=1,
                    ignored_exceptions=[ElementNotVisibleException, NoSuchElementException, TimeoutException])
         return wait
 
@@ -96,3 +105,9 @@ class Main:
             return True
         except TimeoutException:
             return False
+
+    def current_date(self):
+        current_date = datetime.now()
+        format_date = current_date.strftime("%d.%m.%Y")
+        return format_date
+

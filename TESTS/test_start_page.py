@@ -6,7 +6,7 @@ from allure_commons.types import Severity
 
 
 @allure.suite("Start Page")
-class TestStartPage():
+class TestStartPage:
     @allure.title("Open Start Page")
     @allure.feature("Open Site")
     @allure.description("""
@@ -41,22 +41,16 @@ class TestStartPage():
     @allure.title("Start Page Login with Invalid Credentials")
     @allure.feature("Login")
     @allure.description("""
-     Attempt to log in using various combinations of invalid credentials on the Start page.
+    Attempt to log in using various combinations of invalid credentials on the Start page.
 
-     Precondition:
-     - Navigate to the Start page.
+    Precondition:
+    - Navigate to the Start page.
 
-     Expected Result:
-     - Login with invalid credentials fails.
-     - The login error message is displayed for invalid login and/or password combinations and empty fields.
-     """)
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    """)
     @pytest.mark.parametrize("login, passwd, expected", params_start_page_login_invalid)
     @allure.severity(Severity.CRITICAL)
     def test_start_page_login_invalid(self, startpage, login, passwd, expected):
         startpage.start_page_login(login, passwd, expected)
-
-    # def test_start_page_redirect_to_recovery(self, startpage):
-    #     startpage.start_page_redirect(self, "recovery")
-    #
-    # def test_start_page_redirect_to_register(self, startpage):
-    #     startpage.start_page_redirect(self, "register")

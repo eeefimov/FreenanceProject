@@ -129,62 +129,90 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     def test_income_check_cancel_delete_category_from_constant_droplist(self, incomepage):
         incomepage.income_check_delete_random_category_actions(user_login, user_pass, True, "cancel")
+############################CALENDAR########################################################
+    @pytest.mark.calendar_incomes
+    def test_calendar_current_btn(self, incomepage):
+        incomepage.income_check_calendar_current_btn(user_login, user_pass, True)
 
-    # @allure.title("Add new category (valid name length)")
-    # def test_income_check_constant_add_category_valid(self, incomepage):
-    #     param = params_income_new_category_names_valid[0]
-    #     category_name = param.values[0]
-    #     incomepage.income_check_add_category_to_droplist_valid(user_login, user_pass, True, True, category_name)
-    #
-    # @allure.title("Error message show when add new category of Constant income with name length more then 14 chars")
-    # @allure.description("""
-    #              Attempt to add new category using criteria (category name is less then 14 chars).
-    #              Display error message in modal window when user add new category name to the proper edit field.
-    #              New category name is more then 14 chars.
-    #
-    #              Precondition:
-    #              - User use valid login and password.
-    #
-    #              Expected Result:
-    #              - Error message displayed in modal windows when user added new category of Constant Income
-    #              with name more then 14 chars.
-    #          """)
-    # def test_income_check_add_category_length_name_error(self, incomepage):
-    #     param = params_income_new_category_names_invalid[0]
-    #     category_name = param.values[0]
-    #     incomepage.income_check_add_category_length_name_error(user_login, user_pass, True, False, category_name)
-    #
-    # @allure.title("Add new category to Constant income INVALID")
-    # @allure.description("""
-    #          Attempt to add new category using criteria (category name is less then 14 chars).
-    #          If income's name more then 14 chars category do not add to Constant Income list.
-    #
-    #          Precondition:
-    #          - User use valid login and password.
-    #          - Category's name more then 14 chars.
-    #
-    #          Expected Result:
-    #          - New category do not added to Constant income (DropList)
-    #      """)
-    # @pytest.mark.parametrize("new_categoty", params_income_new_category_names_invalid)
-    # def test_income_check_constant_add_category_invalid(self, incomepage, new_categoty):
-    #     incomepage.income_check_add_category_to_droplist_valid(user_login, user_pass, True, False, new_categoty)
-    #
-    #
-    # @allure.title("Add category Close modal window using x")
-    # @allure.description("""
-    #          Close modal window using 'x' when user try to add new category to Constant Income.
-    #
-    #          Precondition:
-    #          - User use valid login and password.
-    #
-    #          Expected Result:
-    #          - Modal window close after click to 'x'.
-    #          - New category did not add to Constant Incomes list.
-    #      """)
-    # @allure.title("Chec cancel X add new category")
-    # def test_income_check_add_category_to_droplist_cancel_x(self, incomepage):
-    #     incomepage.income_check_add_category_to_droplist_cancel_x(user_login, user_pass, 10, True, False)
-    #
-    # def test_income_check_position(self, incomepage):
-    #     incomepage.income_check_position(user_login, user_pass, True)
+    @pytest.mark.calendar_incomes
+    def test_calendar_clear_btn(self, incomepage):
+        incomepage.income_check_calendar_clear_btn(user_login, user_pass, True)
+
+    @pytest.mark.calendar_incomes
+    def test_calendar_randome_date(self, incomepage):
+        incomepage.income_check_calendar_random_date_current_month(user_login, user_pass, True)
+
+############################CATEGORIES ADD###############################################
+    @pytest.mark.dropdown_incomes
+    def test_income_check_add_category_to_constant(self, incomepage):
+        incomepage.income_check_add_category_to_constant(user_login, user_pass, True, 10, True)   #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_add_category_to_temp(self, incomepage):
+        incomepage.income_check_add_category_to_temp(user_login, user_pass, True, 10, True) #pass
+
+##########################CATEGORIES ERRORS CHECK############################################################
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_category_name_error_constant(self, incomepage):
+        incomepage.income_check_exist_category_name_error_constant(user_login, user_pass, True, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_category_name_error_temp(self, incomepage):
+        incomepage.income_check_exist_category_name_error_temp(user_login, user_pass, True, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_category_length_error_constant(self, incomepage):
+        incomepage.income_check_category_name_length_error_constant(user_login, user_pass, True, 15, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_category_length_error_temp(self, incomepage):
+        incomepage.income_check_category_name_length_error_temp(user_login, user_pass, True, 15, False) #pass
+
+##########################CATEGORIES ERRORS CHECK REPEAT######################################################
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_length_error_repeat_constant(self, incomepage):
+        incomepage.income_check_length_error_repeat_constant(user_login, user_pass, True, 15, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_error_repeat_constant(self, incomepage):
+        incomepage.income_check_exist_error_repeat_constant(user_login, user_pass, True, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_length_error_repeat_temp(self, incomepage):
+        incomepage.income_check_length_error_repeat_temp(user_login, user_pass, True, 15, False) #pass
+
+    @pytest.mark.dropdown_incomes
+    def test_income_check_exist_error_repeat_temp(self, incomepage):
+        incomepage.income_check_exist_error_repeat_temp(user_login, user_pass, True, False)
+
+    ##########################CATEGORIES DELETE ######################################################
+    @pytest.mark.delete_incomes
+    def test_income_check_archive_random_constant(self, incomepage):
+        incomepage.income_check_random_archive(user_login, user_pass, True)
+
+    @pytest.mark.delete_incomes
+    def test_income_check_cancel_random_constant(self, incomepage):
+        incomepage.income_check_random_cancel(user_login, user_pass, True)
+
+    @pytest.mark.delete_incomes
+    def test_income_check_delete_random_constant(self, incomepage):
+        incomepage.income_check_random_delete(user_login, user_pass, True)
+
+    @pytest.mark.delete_incomes
+    def test_income_check_archive_random_temp(self, incomepage):
+        incomepage.income_check_random_archive_temp(user_login, user_pass, True)
+
+    @pytest.mark.delete_incomes
+    def test_income_check_cancel_random_temp(self, incomepage):
+        incomepage.income_check_random_cancel_temp(user_login, user_pass, True)
+
+    @pytest.mark.delete_incomes
+    def test_income_check_delete_random_temp(self, incomepage):
+        incomepage.income_check_random_delete_temp(user_login, user_pass, True)
+
+    ##########################-ADD AMOUNT-######################################################
+
+    def test_income_check_add_value_conctant(self, incomepage):
+        incomepage.income_check_add_value_conctant(user_login, user_pass, True, 10000)
+

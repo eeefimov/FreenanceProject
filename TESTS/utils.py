@@ -1,5 +1,6 @@
 import random
 import string
+from datetime import datetime
 
 
 def randomize_number(n):
@@ -58,3 +59,27 @@ def randomize_password(up: int, low: int, variant: int):
                 uppercase_letters + str(digits)
                 ]
     return password[variant]
+
+
+def current_month():
+    russian_month_names = [
+        "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+        "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ]
+    current_month = datetime.now().month
+    return russian_month_names[current_month - 1]
+
+
+def randomize_date():
+    month = current_month()
+    if month == "Январь" or "Март" or "Май" or "Июль" or "Август" or "Октябрь" or "Декабрь":
+        day = 31
+    elif month == "Апрель" or "Июнь" or "Сентябрь" or "Ноябрь":
+        day = 30
+    elif month == "Февраль":
+        day = 28
+
+    random_date = str(random.randint(1, day))
+    return random_date
+
+
