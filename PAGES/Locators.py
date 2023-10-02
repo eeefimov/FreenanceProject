@@ -39,8 +39,11 @@ class IncomePageCategoriesLocators:
     incomepage_add_value_to_category_field_constant = (By.XPATH, "(//input[@class='main_field_string_input'])[1]")
     incomepage_add_value_to_category_field_temp = (By.XPATH, "(//input[@class='main_field_string_input'])[2]")
 
-    incompage_add_value_plus_btn_constant = (By.CSS_SELECTOR, "form.main_field_string:nth-child(4) > button.main_field_string_button_plus:nth-child(7)")
-    incompage_add_value_plus_btn_temp = (By.CSS_SELECTOR, "form.main_field_string:nth-child(6) > button.main_field_string_button_plus:nth-child(7)")
+    incompage_add_value_btn_constant = (By.CSS_SELECTOR, "form.main_field_string:nth-child(4) > button.main_field_string_button:nth-child(6)")
+    incompage_add_value_btn_temp = (By.CSS_SELECTOR, "form.main_field_string:nth-child(6) > button.main_field_string_button:nth-child(6)")
+
+    incompage_add_value_plus_btn_constant = (By.XPATH, "(//button[@class='main_field_string_button_plus'])[1]")
+    incompage_add_value_plus_btn_temp = (By.XPATH, "(//button[@class='main_field_string_button_plus'])[2]")
 
 
 class IncomePageCategoriesDelete:

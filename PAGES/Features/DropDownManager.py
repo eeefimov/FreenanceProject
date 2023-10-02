@@ -26,7 +26,6 @@ class DropDownManager(Main):
                 self.do_list_item_delete_click(delete_button)
                 time.sleep(1)
 
-
     def set_value_add_modal_window(self, field_name: str, field_locator, value, name_length_error_locator):
         self.do_element_send_keys(field_name, field_locator, value)
         return self.wait_not_element(name_length_error_locator)

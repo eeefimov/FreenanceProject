@@ -181,17 +181,17 @@ class IncomePage(StartPage, IncomePageCalendarLocators,
         list_category.select_categories_and_action(list_name, list_locator, "x", list_values)
         list_category.delete_value_modal_wndw_actions(del_action_btn_name, del_action_btn_locator)
 
-    def income_check_random_archive(self, login, pwd, expected):
+    def income_check_random_archive_constant(self, login, pwd, expected):
         self.delete_category(login, pwd, expected,
                                "Постоянные", self.incomepage_constant_dropdown, self.incomepage_list_values,
                                "archive", self.incomepage_modal_window_archive_btn)
 
-    def income_check_random_cancel(self, login, pwd, expected):
+    def income_check_random_cancel_constant(self, login, pwd, expected):
         self.delete_category(login, pwd, expected,
                                "Постоянные", self.incomepage_constant_dropdown, self.incomepage_list_values,
                                "cancel", self.incomepage_modal_window_cancel_btn)
 
-    def income_check_random_delete(self, login, pwd, expected):
+    def income_check_random_delete_constant(self, login, pwd, expected):
         self.delete_category(login, pwd, expected,
                                "Постоянные", self.incomepage_constant_dropdown, self.incomepage_list_values,
                                "delete", self.incomepage_modal_window_delete_btn)
@@ -218,20 +218,25 @@ class IncomePage(StartPage, IncomePageCalendarLocators,
         amount_category = self.setup_dropdown(login, pwd, expected)
         category_name = amount_category.get_exist_name_from_the_list(list_name, list_locator,
                                                                      list_values_locator, logo_locator, "")
+
         _ = amount_category.get_exist_name_from_the_list(list_name, list_locator,
                                                                      list_values_locator, logo_locator, category_name)
-        self.do_element_send_keys("Amount field", amount_field_locator,
-                                  randomize_number(amont))
-        time.sleep(10)
-        # self.do_list_item_delete_click(plus_btn_locator)
-        # time.sleep(4)
+
+        self.do_element_send_keys("Amount field", amount_field_locator, amont)
+        self.do_list_item_delete_click(plus_btn_locator)
+        time.sleep(3)
 
     def income_check_add_value_conctant(self, login, pwd, expected, amount):
         self.add_amount(login, pwd, expected,
                         "Постоянные", self.incomepage_constant_dropdown, self.incomepage_list_values,
                         self.incomepage_logo, self.incomepage_add_value_to_category_field_constant, amount,
-                        self.incompage_add_value_plus_btn_constant
-                        )
+                        self.incompage_add_value_btn_constant)
+
+    def income_check_add_value_temp(self, login, pwd, expected, amount):
+        self.add_amount(login, pwd, expected,
+                        "Временные", self.incomepage_temp_dropdown, self.incomepage_list_values,
+                        self.incomepage_logo, self.incomepage_add_value_to_category_field_temp, amount,
+                        self.incompage_add_value_btn_temp)
 
 
 
