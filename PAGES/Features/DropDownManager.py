@@ -21,7 +21,6 @@ class DropDownManager(Main):
 
             if filtered_list_items:
                 selected_item = random.choice(filtered_list_items)
-                # item_name = selected_item.text
                 delete_button = selected_item.find_element(By.CLASS_NAME, "Modal_delete_icon__bvKEF")
                 self.do_list_item_delete_click(delete_button)
                 time.sleep(1)

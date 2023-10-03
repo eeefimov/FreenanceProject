@@ -39,8 +39,10 @@ class IncomePageCategoriesLocators:
     incomepage_add_value_to_category_field_constant = (By.XPATH, "(//input[@class='main_field_string_input'])[1]")
     incomepage_add_value_to_category_field_temp = (By.XPATH, "(//input[@class='main_field_string_input'])[2]")
 
-    incompage_add_value_btn_constant = (By.CSS_SELECTOR, "form.main_field_string:nth-child(4) > button.main_field_string_button:nth-child(6)")
-    incompage_add_value_btn_temp = (By.CSS_SELECTOR, "form.main_field_string:nth-child(6) > button.main_field_string_button:nth-child(6)")
+    incompage_add_value_btn_constant = (By.CSS_SELECTOR, "form.main_field_string:nth-child(4) > "
+                                                         "button.main_field_string_button:nth-child(6)")
+    incompage_add_value_btn_temp = (By.CSS_SELECTOR, "form.main_field_string:nth-child(6) > "
+                                                     "button.main_field_string_button:nth-child(6)")
 
     incompage_add_value_plus_btn_constant = (By.XPATH, "(//button[@class='main_field_string_button_plus'])[1]")
     incompage_add_value_plus_btn_temp = (By.XPATH, "(//button[@class='main_field_string_button_plus'])[2]")
@@ -50,6 +52,15 @@ class IncomePageCategoriesDelete:
     incomepage_modal_window_delete_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(1)")
     incomepage_modal_window_archive_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(2)")
     incomepage_modal_window_cancel_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(3)")
+
+
+class IncomePageOperationListLocators:
+    incomepage_operation_list = (By.CLASS_NAME, "Transactions_transactions__jCg2E")
+    incomepage_operation_list_values = (By.CLASS_NAME, "Transactions_operation__PfbWn")
+    incomepage_operation_modal_delete_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(1)")
+    incomepage_operation_modal_cancel_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(2)")
+    incomepage_operation_modal_add_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(2)")
+
 
 
 

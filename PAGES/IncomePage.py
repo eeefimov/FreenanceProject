@@ -2,12 +2,17 @@ import time
 from PAGES.StartPage import StartPage
 from PAGES.Features.CalendarManager import CalendarManager
 from PAGES.Features.DropDownManager import DropDownManager
-from PAGES.Locators import IncomePageCalendarLocators, IncomePageCategoriesLocators, IncomePageCategoriesDelete
-from TESTS.utils import randomize_latin_string, randomize_number
+from PAGES.Features.OperationListManager import OperationListManager
+from PAGES.Locators import IncomePageCalendarLocators, IncomePageCategoriesLocators, \
+    IncomePageCategoriesDelete, IncomePageOperationListLocators
+from TESTS.utils import randomize_latin_string
 
 
-class IncomePage(StartPage, IncomePageCalendarLocators,
-                 IncomePageCategoriesLocators, IncomePageCategoriesDelete):
+class IncomePage(StartPage,
+                 IncomePageCalendarLocators,
+                 IncomePageCategoriesLocators,
+                 IncomePageCategoriesDelete,
+                 IncomePageOperationListLocators):
     def __init__(self, driver):
         super().__init__(driver)
 #################-Calendar-###################################################################################################
@@ -213,20 +218,21 @@ class IncomePage(StartPage, IncomePageCalendarLocators,
 
 # ADD AMOUNT
     def add_amount(self, login, pwd, expected, list_name, list_locator, list_values_locator,
-                   logo_locator, amount_field_locator, amont, plus_btn_locator):
+                   logo_locator, amount_field_locator, amount, add_btn_locator):
 
         amount_category = self.setup_dropdown(login, pwd, expected)
         category_name = amount_category.get_exist_name_from_the_list(list_name, list_locator,
                                                                      list_values_locator, logo_locator, "")
 
         _ = amount_category.get_exist_name_from_the_list(list_name, list_locator,
-                                                                     list_values_locator, logo_locator, category_name)
+                                                        list_values_locator, logo_locator, category_name)
 
-        self.do_element_send_keys("Amount field", amount_field_locator, amont)
-        self.do_list_item_delete_click(plus_btn_locator)
-        time.sleep(3)
+        self.do_element_send_keys("Amount field", amount_field_locator, amount)
 
-    def income_check_add_value_conctant(self, login, pwd, expected, amount):
+        self.do_element_click("Add", add_btn_locator)
+        time.sleep(1)
+
+    def income_check_add_value_constant(self, login, pwd, expected, amount):
         self.add_amount(login, pwd, expected,
                         "Постоянные", self.incomepage_constant_dropdown, self.incomepage_list_values,
                         self.incomepage_logo, self.incomepage_add_value_to_category_field_constant, amount,
@@ -237,6 +243,60 @@ class IncomePage(StartPage, IncomePageCalendarLocators,
                         "Временные", self.incomepage_temp_dropdown, self.incomepage_list_values,
                         self.incomepage_logo, self.incomepage_add_value_to_category_field_temp, amount,
                         self.incompage_add_value_btn_temp)
+
+    #OPERATION List
+
+    def setup_operation_list(self):
+        time.sleep(1)
+        ol = OperationListManager(self.driver)
+        return ol
+
+    def income_check_operation_constant(self, login, pwd, expected, amount):
+        self.income_check_add_value_constant(login, pwd, expected, amount)
+
+        operations = self.setup_operation_list()
+        income = operations.operation_list_check_amount(self.incomepage_operation_list_values, amount)
+        print(amount, "=", income)
+        assert income == amount
+
+    def income_check_operation_temp(self, login, pwd, expected, amount):
+        self.income_check_add_value_temp(login, pwd, expected, amount)
+
+        operations = self.setup_operation_list()
+        income = operations.operation_list_check_amount(self.incomepage_operation_list_values, amount)
+        print(amount, "=", income)
+        assert income == amount
+
+    def income_check_operation_x_del_btn(self, login, pwd, expected):
+        self.start_page_login(login, pwd, expected)
+        operation = self.setup_operation_list()
+        operation.operation_list_get_btn(self.incomepage_operation_list_values, "delete")
+        time.sleep(1)
+        self.do_element_click("delete", self.incomepage_operation_modal_delete_btn)
+
+    def income_check_operation_x_cancel_btn(self, login, pwd, expected):
+        self.start_page_login(login, pwd, expected)
+        operation = self.setup_operation_list()
+        operation.operation_list_get_btn(self.incomepage_operation_list_values, "delete")
+        time.sleep(1)
+        self.do_element_click("delete", self.incomepage_operation_modal_cancel_btn)
+
+    def income_check_operation_edit_btn(self, login, pwd, expected):
+        self.start_page_login(login, pwd, expected)
+        operation = self.setup_operation_list()
+        operation.operation_list_get_btn(self.incomepage_operation_list_values, "edit")
+        time.sleep(1)
+        self.do_element_click("edit", self.incomepage_operation_modal_add_btn)
+        time.sleep(1)
+
+    def income_check_operation_edit_amount(self, login, pwd, expected):
+        self.income_check_operation_edit_btn(login, pwd, expected)
+
+
+
+
+
+
 
 
 
