@@ -2,7 +2,7 @@ name: Python application
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "income_page_tests" ]
   pull_request:
     branches: [ "master" ]
 
