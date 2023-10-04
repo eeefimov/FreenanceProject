@@ -60,6 +60,7 @@ class IncomePageOperationListLocators:
     incomepage_operation_modal_delete_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(1)")
     incomepage_operation_modal_cancel_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(2)")
     incomepage_operation_modal_add_btn = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_button__CFXUj:nth-child(2)")
+    incomepage_operation_modal_edit_field = (By.CSS_SELECTOR, ".Modal_active__c78VE .Modal_modal_input__LHDfG")
 
 
 

@@ -39,9 +39,9 @@ class IncomePage(StartPage,
 
     def income_check_calendar_random_date_current_month(self, login, pwd, expected):
         cm = self.setup_income_calendar(login, pwd, expected)
-        selected_date = (
-            cm.set_date("Случайная дата", self.incomepage_calendar_date, self.incomepage_calendar_month))
-        time.sleep(1)
+        selected_date = (cm.set_date("Случайная дата", self.incomepage_calendar_date,
+                                     self.incomepage_calendar_month))
+        time.sleep(2)
         assert selected_date != None or "" or "Выбор даты"
 
 #################-Categories-#####################################################################################
@@ -61,8 +61,8 @@ class IncomePage(StartPage,
 
         length_error = list_category.set_value_add_modal_window("Название категории", modal_field_locator,
                                                                 value, self.incomepage_modal_window_length_name_error)
-        print(length_error)
         assert length_error == ln_error
+
         if not length_error:
             return "Length error is displayed"
         else:
@@ -286,8 +286,14 @@ class IncomePage(StartPage,
         operation = self.setup_operation_list()
         operation.operation_list_get_btn(self.incomepage_operation_list_values, "edit")
         time.sleep(1)
-        self.do_element_click("edit", self.incomepage_operation_modal_add_btn)
+        edit_field = self.get_element(self.incomepage_operation_modal_edit_field)
+        edit_field.clear()
         time.sleep(1)
+        self.do_element_send_keys("Field with old amount",
+                                  self.incomepage_operation_modal_edit_field,
+                                  1000)
+        time.sleep(1)
+        self.do_element_click("edit", self.incomepage_operation_modal_add_btn)
 
     def income_check_operation_edit_amount(self, login, pwd, expected):
         self.income_check_operation_edit_btn(login, pwd, expected)

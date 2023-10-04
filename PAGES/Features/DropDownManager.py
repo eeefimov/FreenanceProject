@@ -1,7 +1,6 @@
 import random
 import time
 from PAGES.main import Main
-from TESTS.utils import randomize_number
 from selenium.webdriver.common.by import By
 
 
@@ -17,10 +16,9 @@ class DropDownManager(Main):
             self.do_element_click(action_name, action_locator)
         else:
             list_items = self.driver.find_elements(*action_locator)
-            filtered_list_items = [item for item in list_items if item.get_attribute("index") not in ["1", "2"]]
 
-            if filtered_list_items:
-                selected_item = random.choice(filtered_list_items)
+            if list_items:
+                selected_item = random.choice(list_items)
                 delete_button = selected_item.find_element(By.CLASS_NAME, "Modal_delete_icon__bvKEF")
                 self.do_list_item_delete_click(delete_button)
                 time.sleep(1)
@@ -38,7 +36,7 @@ class DropDownManager(Main):
         item_names = set(item.text for item in self.driver.find_elements(*list_items))
 
         if name in item_names:
-            print(name)
+            print("New category name: ", name)
             return True
         else:
             return False
@@ -46,14 +44,12 @@ class DropDownManager(Main):
     def get_exist_name_from_the_list(self, list_name: str, list_locator, list_values_locator,
                                      logo_locator, category_name):
         self.do_element_click(list_name, list_locator)
-        item_names = []
-        dropdown_items = self.driver.find_elements(*list_values_locator)
-        for item in dropdown_items:
-            if item.text == category_name:
+        item_names = set(item.text for item in self.driver.find_elements(*list_values_locator))
+        for item in item_names:
+            if item == category_name:
                 item.click()
                 break
-            item_names.append(item.text)
-        category_name = item_names[randomize_number(len(item_names)) - 1]
+        category_name = random.choice(list(item_names))
         self.do_element_click("Logo", logo_locator)
         return category_name
 
