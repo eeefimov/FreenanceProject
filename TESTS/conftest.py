@@ -15,13 +15,15 @@ def browser():
     driver_path = ChromeDriverManager().install()
     service = Service(driver_path)
     options = Options()
-    #options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("--incognito")
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument('--user-data-dir=tmp/chrome_profile')
     driver = webdriver.Chrome(service=service, options=options)
     driver.delete_all_cookies()
-    driver.set_window_size(1366, 768)
+    driver.set_window_size(1920, 1080)
+
+    # driver.set_window_size(1366, 768)
 
     yield driver
 
