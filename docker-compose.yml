@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  regression:
+    image: python:3.9
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/user/workspace
+    command: /bin/sh - c "ls && pytest - sv --alluredir=allure-results"
+    working_dir: /usr/workspace
+    entrypoint:
+      -user_login=${USER_LOGIN}
+      -user_pass=${USER_PASS}
+      -user_email=${USER_EMAIL}
+      -key=${KEY }
