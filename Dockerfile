@@ -1,7 +1,7 @@
 FROM python:3.9
 
 RUN apt-get update && \
-    apt-get install -y chromium-driver openjdk-11-jre-headless curl tar
+    apt-get install -y chromium-driver default-jre curl tar
 
 RUN curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
     tar -zxvf allure-2.13.8.tgz -C /opt/ && \
@@ -11,5 +11,6 @@ RUN curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta
 WORKDIR /usr/workspace
 
 COPY requirements.txt .
-
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip install pytest
