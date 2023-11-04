@@ -15,5 +15,3 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install pytest
 
-# Set the command to run your tests
-CMD ["pytest", "-sv", "--alluredir=allure-results"]

@@ -7,7 +7,6 @@ from TESTS.params import params_recovery_page_email_validation
 @allure.suite("Recovery Page")
 class TestRecoveryPage:
     @allure.title("Open Recovery Page")
-    @allure.suite("Recovery page")
     @allure.feature("Open Recovery")
     @allure.description("""
     Redirect to the recovery page after 'password recovery' click on start page. 
@@ -24,8 +23,7 @@ class TestRecoveryPage:
     def test_recovery_page_go_to_site(self, recovery_page):
         recovery_page.start_page_redirect("recovery")
 
-    @allure.title("Open Recovery Page")
-    @allure.suite("Recovery page")
+    @allure.title("Check Recovery Return link")
     @allure.feature("Return link")
     @allure.description("""
     Redirect back to start page after 'return back' link click.
@@ -40,8 +38,7 @@ class TestRecoveryPage:
     def test_recovery_check_return_link(self, recovery_page):
         recovery_page.recovery_check_return_link()
 
-    @allure.title("Open Recovery Page")
-    @allure.suite("Recovery page")
+    @allure.title("Check Recovery Email validation")
     @allure.feature("Email validation")
     @allure.description("""
     If user setup invalid values or empty to Email field in recovery page 
@@ -61,5 +58,20 @@ class TestRecoveryPage:
     def test_recovery_check_email_validation(self, recovery_page, value, expected):
         recovery_page.recovery_check_email_validation(value, expected)
 
+    @allure.title("Check Recovery Send Email confirm msg")
+    @allure.feature("Send Email confirm msg")
+    @allure.description("""
+    Check Notification message shows up, when user setup valid Email to Email field
+    and press 'Восстановить' button.
+
+    Params:
+    - Valid email
+
+    Expected Result:
+    - Notification message is shows up, when user setup valid Email to Email field
+    and press 'Восстановить' button.
+    """)
+    @allure.severity(Severity.NORMAL)
+    @pytest.mark.recovery_page
     def test_recovery_check_send_mail_msg(self, recovery_page):
         recovery_page.recovery_check_send_mail_msg()

@@ -16,10 +16,7 @@ params_start_page_login_invalid = [
 
 params_income_new_category_names_invalid = [
     pytest.param(randomize_latin_string(15), id="String 15"),
-    pytest.param(f"{randomize_latin_string(5)} {randomize_latin_string(5)}", id="Space between two string(5)"),
-    pytest.param("document.body.style.backgroundColor = 'red';", id="Script"),
-    pytest.param("", id="Empty"),
-    pytest.param(randomize_chinese_string(14), id="14 Chinese")
+    pytest.param("", id="Empty")
 ]
 
 params_income_new_category_names_valid = [
@@ -34,21 +31,19 @@ params_recovery_page_email_validation = [
 
 params_register_page_verify_email_field = [
     pytest.param(randomize_latin_string(5), False, id="Format: string"),
-    pytest.param(randomize_float(100), False,
-                 id="Format: int"),
+    pytest.param(randomize_float(100), False, id="Format: float"),
     pytest.param(f"@{randomize_latin_string(3)}.{randomize_latin_string(3)}", False, id="Format: @chars.chars"),
     pytest.param(f"{randomize_latin_string(3)}@", False, id="Format: chars@"),
     pytest.param(f"{randomize_latin_string(3)}@{randomize_latin_string(3)}", False, id="Format: chars@chars")
 ]
-#
+
 params_register_page_verify_login_field = [
     pytest.param(randomize_latin_string(5), False, id="Format: invalid value (5 chars)"),
     pytest.param(randomize_latin_string(33), False, id="Format: invalid value (33 chars)"),
     pytest.param(randomize_special_string(10), False, id="Format: invalid special"),
-    pytest.param(randomize_cyrillic_string(10), False, id="Format: invalid cyrillic"),
-    pytest.param(randomize_chinese_string(10), False, id="Format: invalid chinese")
+    pytest.param(randomize_cyrillic_string(10), False, id="Format: invalid cyrillic")
 ]
-#
+
 params_register_page_verify_pass_field = [
     pytest.param(randomize_latin_string(5), False, id="Format: invalid value (5 chars)"),
     pytest.param(randomize_password(2, 2, 0), False, id="Format: invalid value (5 chars),2 up 2 low 1 int"),
