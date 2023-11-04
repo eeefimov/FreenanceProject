@@ -8,17 +8,15 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from PAGES.PagesMain import PagesMain
 from PAGES.StartPage import StartPage
+from PAGES.SavesPage import SavesPage
 from PAGES.RecoveryPage import RecoveryPage
 from PAGES.RegisterPage import RegisterPage
 from TESTS.settings import user_login, user_pass
 from PAGES.Locators import PageLinks
 import datetime
 
-
 @pytest.fixture(scope="function")
 def browser():
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--incognito")
@@ -27,7 +25,6 @@ def browser():
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--start-maximized")
-    # driver = webdriver.Chrome(service=service, options=options)
     driver = webdriver.Chrome(options=options)
     driver.delete_all_cookies()
     driver.set_window_size(1280, 1024)
@@ -93,7 +90,8 @@ def recovery_page(browser):
 
 
 @pytest.fixture(scope="function")
-def register_page(browser):
+def register_page(browser, start_page):
+    start_page.start_page_redirect("register")
     register = RegisterPage(browser)
     return register
 

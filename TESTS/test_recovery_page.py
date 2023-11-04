@@ -7,7 +7,7 @@ from TESTS.params import params_recovery_page_email_validation
 @allure.suite("Recovery Page")
 class TestRecoveryPage:
     @allure.title("Open Recovery Page")
-    @allure.feature("Recovery")
+    @allure.feature("Open Recovery")
     @allure.description("""
     Redirect to the recovery page after 'password recovery' click on start page. 
 
