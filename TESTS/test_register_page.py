@@ -21,8 +21,8 @@ class TestRegisterPage:
     - All necessary elements are visible.
     """)
     @allure.severity(Severity.NORMAL)
-    def test_register_page_open(self, registerpage):
-        registerpage.start_page_redirect("register")
+    def test_register_page_open(self, register_page):
+        register_page.start_page_redirect("register")
 
     @allure.title("Check Already Registered Page")
     @allure.feature("Already register link")
@@ -35,8 +35,8 @@ class TestRegisterPage:
     - User redirected back start page after click 'Already Registered' link on registration page. 
     """)
     @allure.severity(Severity.NORMAL)
-    def test_register_page_already_registered_link(self, registerpage):
-        registerpage.register_check_already_registered_link()
+    def test_register_page_already_registered_link(self, register_page):
+        register_page.register_check_already_registered_link()
 
     @allure.title("Verify Email Field on Register Page")
     @allure.feature("Email field error")
@@ -53,8 +53,8 @@ class TestRegisterPage:
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("val, expected", params_register_page_verify_email_field)
-    def test_register_email_field_validation(self, registerpage, val, expected):
-        registerpage.register_check_email_field_validation(val, expected)
+    def test_register_email_field_validation(self, register_page, val, expected):
+        register_page.register_check_email_field_validation(val, expected)
 
     @allure.title("Verify Login Field on Register Page")
     @allure.feature("Login field error")
@@ -71,8 +71,8 @@ class TestRegisterPage:
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("value, expected", params_register_page_verify_login_field)
-    def test_register_login_field_validation(self, registerpage, value, expected):
-        registerpage.register_check_login_field_validation(value, expected)
+    def test_register_login_field_validation(self, register_page, value, expected):
+        register_page.register_check_login_field_validation(value, expected)
 
     @allure.title("Verify Password Field on Register Page")
     @allure.feature("Password field error")
@@ -89,8 +89,8 @@ class TestRegisterPage:
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("value, expected", params_register_page_verify_pass_field)
-    def test_register_password_field_validation(self, registerpage, value, expected):
-        registerpage.register_check_password_field_validation(value, expected)
+    def test_register_password_field_validation(self, register_page, value, expected):
+        register_page.register_check_password_field_validation(value, expected)
 
     @allure.title("Verify Password Confirmation Field on Register Page")
     @allure.description("""
@@ -104,8 +104,8 @@ class TestRegisterPage:
         an error message should be displayed as specified in 'error'.
     """)
     @pytest.mark.parametrize("val, expected, validation", params_register_page_verify_pass_confirm_field)
-    def test_register_password_confirm(self, registerpage, val, expected, validation):
-        registerpage.register_check_verify_pass_confirm(val, expected, validation)
+    def test_register_password_confirm(self, register_page, val, expected, validation):
+        register_page.register_check_verify_pass_confirm(val, expected, validation)
 
     @allure.title("Register with Existing User")
     @allure.feature("exist user registration error")
@@ -127,5 +127,5 @@ class TestRegisterPage:
     """)
     @allure.severity(Severity.NORMAL)
     @pytest.mark.parametrize("email, login, pwd", params_register_page_exist_user_values)
-    def test_register_check_exist_user(self, registerpage, email, login, pwd):
-        registerpage.register_check_exist_user(email, login, pwd)
+    def test_register_check_exist_user(self, register_page, email, login, pwd):
+        register_page.register_check_exist_user(email, login, pwd)

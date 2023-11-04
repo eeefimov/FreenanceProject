@@ -6,7 +6,7 @@ from allure_commons.types import Severity
 
 
 @allure.suite("Start Page")
-class TestStartPage():
+class TestStartPage:
     @allure.title("Open Start Page")
     @allure.feature("Open Site")
     @allure.description("""
@@ -20,8 +20,8 @@ class TestStartPage():
     - All necessary elements are visible.
     """)
     @allure.severity(Severity.BLOCKER)
-    def test_start_page_go_to_site(self, startpage):
-        startpage.start_page_go_to_page()
+    def test_start_page_go_to_site(self, start_page):
+        start_page.start_page_go_to_page()
 
     @allure.title("Start Page Login with Valid Credentials")
     @allure.feature("Login")
@@ -35,8 +35,8 @@ class TestStartPage():
     - Login with valid credentials passes.
     """)
     @allure.severity(Severity.NORMAL)
-    def test_start_page_login_valid(self, startpage):
-        startpage.start_page_login(user_login, user_pass, False)
+    def test_start_page_login_valid(self, start_page):
+        start_page.start_page_login(user_login, user_pass, False)
 
     @allure.title("Start Page Login with Invalid Credentials")
     @allure.feature("Login")
@@ -52,11 +52,6 @@ class TestStartPage():
      """)
     @pytest.mark.parametrize("login, passwd, expected", params_start_page_login_invalid)
     @allure.severity(Severity.CRITICAL)
-    def test_start_page_login_invalid(self, startpage, login, passwd, expected):
-        startpage.start_page_login(login, passwd, expected)
+    def test_start_page_login_invalid(self, start_page, login, passwd, expected):
+        start_page.start_page_login(login, passwd, expected)
 
-    # def test_start_page_redirect_to_recovery(self, startpage):
-    #     startpage.start_page_redirect(self, "recovery")
-    #
-    # def test_start_page_redirect_to_register(self, startpage):
-    #     startpage.start_page_redirect(self, "register")
