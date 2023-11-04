@@ -1,3 +1,9 @@
 .pytest_cache
 *tmp
 .idea
+reports
+allure-results
+allure-report
+senior_test_runs.yml
+
+

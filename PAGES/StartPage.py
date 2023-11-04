@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
-from PAGES.main import Main
+from PAGES.Main import Main
 
 
 class StartPage(Main):
+
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -29,15 +30,19 @@ class StartPage(Main):
         self.do_element_send_keys("User password", self.startpage_pass_field, pwd)
 
         if not expected:
-            assert self.wait_not_element(self.startpage_login_error) or self.wait_not_element(self.startpage_pass_error)
+            assert self.wait_not_element_error(self.startpage_login_error) or self.wait_not_element_error(self.startpage_pass_error)
 
-        self.do_element_click("Forward", self.startpage_forvard_btn)
+        self.do_click("Forward", self.startpage_forvard_btn)
 
     def start_page_redirect(self, link_identifier):
         self.go_to_site()
 
         if link_identifier == "recovery":
-            self.do_element_click('password recovery link', self.startpage_recovery_link)
+            self.do_click('password recovery link', self.startpage_recovery_link)
 
         elif link_identifier == "register":
-            self.do_element_click('registration link', self.startpage_register_link)
+            self.do_click('registration link', self.startpage_register_link)
+
+
+
+

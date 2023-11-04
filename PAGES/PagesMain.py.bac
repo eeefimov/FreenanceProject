@@ -1,0 +1,423 @@
+import time
+from PAGES.Main import Main
+from PAGES.Features.CalendarManager import CalendarManager
+from PAGES.Features.DropDownManager import DropDownManager
+from PAGES.Features.OperationListManager import OperationListManager
+from PAGES.Locators import CalendarLocators, CategoriesLocators, OperationListLocators
+from TESTS.utils import current_date
+
+
+class PagesMain(Main):
+
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    # ################-Calendar-##################################
+
+    def check_calendar_current_btn(self, repeat: bool):
+        calendar, calendar_locators = self.setup_managers_and_locators(CalendarManager, CalendarLocators)
+        self.do_element_click_presence("Выбор даты", calendar_locators.calendar)
+        time.sleep(1)
+
+        today = calendar.calendar_buttons("Сегодня",
+                                          calendar_locators.calendar_today_btn,
+                                          calendar_locators.calendar)
+        assert current_date() == today
+
+        if repeat:
+            return calendar, calendar_locators, today
+
+    def check_calendar_clear_btn(self, repeat: bool):
+        calendar, calendar_locators, date = self.check_calendar_current_btn(repeat)
+
+        self.do_element_click_presence("Выбор даты", calendar_locators.calendar)
+        time.sleep(1)
+
+        cleared_date = calendar.calendar_buttons("Очистить",
+                                                 calendar_locators.calendar_clear_btn,
+                                                 calendar_locators.calendar)
+
+        assert date != cleared_date
+
+    def check_calendar_random_date_current_month(self):
+        calendar, calendar_locators = self.setup_managers_and_locators(CalendarManager, CalendarLocators)
+        self.do_element_click_presence("Выбор даты", calendar_locators.calendar)
+        time.sleep(1)
+        selected_date = calendar.calendar_random_date(calendar_locators.calendar)
+        print(selected_date)
+        assert selected_date is not None or "" or "Выбор даты"
+
+    # ################-Categories-#####################################################################################
+    # Length Errors
+
+    # OUT
+    def check_category_name_length_error_constant(self, name, length_error: bool):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn
+                                                  )
+        value = name
+        time.sleep(1)
+
+        error1 = list_category.modal_length_error(field_name="Название категории",
+                                                  field_locator=list_locators.modal_window_add_name_value_field,
+                                                  key=value,
+                                                  error_locator=list_locators.income_modal_window_length_error
+                                                  )
+        assert length_error == error1
+
+    # OUT
+    def check_category_name_length_error_temp(self, name, length_error: bool):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn
+                                                  )
+        value = name
+        time.sleep(1)
+
+        error1 = list_category.modal_length_error(field_name="Название категории",
+                                                  field_locator=list_locators.modal_window_add_name_value_field,
+                                                  key=value,
+                                                  error_locator=list_locators.income_modal_window_length_error
+                                                  )
+        assert length_error == error1
+
+    # Exist errors
+    def check_exist_category_name_error_constant(self, exist_error):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        exist_name = list_category.get_exist_name_from_the_list(list_name="Постоянные",
+                                                                list_locator=list_locators.constant_dropdown,
+                                                                list_values_locator=list_locators.list_values,
+                                                                action_locator=list_locators.list_add_value_btn
+                                                                )
+        print(exist_name)
+        time.sleep(1)
+
+        error2 = list_category.modal_exist_error(field_name="Название категории",
+                                                 field_locator=list_locators.modal_window_add_name_value_field,
+                                                 key=exist_name,
+                                                 add_btn_locator=list_locators.modal_window_add_name_value_btn,
+                                                 exist_error_locator=list_locators.income_modal_window_length_error
+                                                 )
+        assert exist_error == error2
+
+    def check_exist_category_name_error_temp(self, exist_error):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        exist_name = list_category.get_exist_name_from_the_list(list_name="Временные",
+                                                                list_locator=list_locators.temp_dropdown,
+                                                                list_values_locator=list_locators.list_elements,
+                                                                action_locator=list_locators.list_add_value_btn
+                                                                )
+        print(exist_name)
+        time.sleep(1)
+
+        error2 = list_category.modal_exist_error(field_name="Название категории",
+                                                 field_locator=list_locators.modal_window_add_name_value_field,
+                                                 key=exist_name,
+                                                 add_btn_locator=list_locators.modal_window_add_name_value_btn,
+                                                 exist_error_locator=list_locators.income_modal_window_length_error
+                                                 )
+        assert exist_error == error2
+
+    # ADD category
+
+    def check_add_category_to_constant(self, name):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn
+                                                  )
+
+        self.do_element_send_keys(locator_name="Название категории",
+                                  by_locator=list_locators.modal_window_add_name_value_field,
+                                  text_keys=name)
+
+        self.do_element_click_presence(name_element="Добавить", by_locator=list_locators.modal_window_add_name_value_btn)
+        time.sleep(1)
+
+        assert list_category.check_added_value_in_category(name=name,
+                                                           list_name="Постоянные",
+                                                           list_locator=list_locators.constant_dropdown,
+                                                           list_items=list_locators.list_elements
+                                                           )
+
+    def check_add_category_to_temp(self, name):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn
+                                                  )
+
+        self.do_element_send_keys(locator_name="Название категории",
+                                  by_locator=list_locators.modal_window_add_name_value_field,
+                                  text_keys=name)
+
+        self.do_element_click_presence(name_element="Добавить", by_locator=list_locators.modal_window_add_name_value_btn)
+        time.sleep(1)
+
+        assert list_category.check_added_value_in_category(name=name,
+                                                           list_name="Временные",
+                                                           list_locator=list_locators.temp_dropdown,
+                                                           list_items=list_locators.list_elements
+                                                           )
+    # REPEAT Length error
+
+    def check_length_error_repeat_constant(self, name):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        self.check_category_name_length_error_constant(name, True)
+        self.do_element_click_presence("x", list_locators.modal_window_add_x_btn)
+        time.sleep(1)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn)
+
+        assert self.wait_not_element(list_locators.income_modal_window_length_error)
+
+    def check_length_error_repeat_temp(self, name):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        self.check_category_name_length_error_temp(name, True)
+        self.do_element_click_presence("x", list_locators.modal_window_add_x_btn)
+        time.sleep(1)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn)
+
+        assert self.wait_not_element(list_locators.income_modal_window_length_error)
+
+    # REPEAT exist error
+
+    def check_exist_error_repeat_constant(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        self.check_exist_category_name_error_constant(True)
+        self.do_element_click_presence("Logo", list_locators.modal_window_add_x_btn)
+        time.sleep(1)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn)
+
+        assert self.wait_not_element(list_locators.income_exist_name_error)
+
+    def check_exist_error_repeat_temp(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        self.check_exist_category_name_error_temp(True)
+        self.do_element_click_presence("Logo", list_locators.modal_window_add_x_btn)
+        time.sleep(1)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_add_value_btn)
+
+        assert self.wait_not_element(list_locators.income_exist_name_error)
+
+    # DELETE category (DEL, ARCHIVE, CANCEL)
+    def check_random_delete_constant(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("delete", list_locators.income_modal_window_delete_btn)
+
+    def check_random_archive_constant(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("archive", list_locators.income_modal_window_archive_btn)
+
+    def check_random_cancel_constant(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("cancel", list_locators.income_modal_window_cancel_btn)
+
+    def check_random_delete_temp(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("delete", list_locators.income_modal_window_delete_btn_temp)
+
+    def check_random_archive_temp(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("archive", list_locators.income_modal_window_archive_btn_temp)
+
+    def check_random_cancel_temp(self):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name=list_locators.list_elements,
+                                                  action_locator="")
+        time.sleep(1)
+
+        list_category.delete_value_modal_wndw_actions("cancel", list_locators.income_modal_window_cancel_btn_temp)
+
+    # ADD AMOUNT
+
+    def check_add_amount_value_constant(self, amount):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Постоянные",
+                                                  list_locator=list_locators.constant_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_elements
+                                                  )
+
+        self.do_element_send_keys("Amount field", list_locators.add_amount_to_category_field_const, amount)
+
+        self.do_element_click_presence("Add", list_locators.add_amount_to_category_btn_const)
+
+    def check_add_amount_value_temp(self, amount):
+        list_category, list_locators = self.setup_managers_and_locators(DropDownManager, CategoriesLocators)
+
+        list_category.select_categories_or_action(list_name="Временные",
+                                                  list_locator=list_locators.temp_dropdown,
+                                                  action_name="Добавить категорию",
+                                                  action_locator=list_locators.list_elements
+                                                  )
+        self.do_element_send_keys("Amount field", list_locators.add_amount_to_category_field_temp, amount)
+
+        self.do_element_click_presence("Add", list_locators.add_amount_to_category_btn_temp)
+
+    # OPERATION List
+
+    def check_operation_constant(self, amount, arithmetics: str):
+        operation, operations_locators = self.setup_managers_and_locators(OperationListManager,
+                                                                          OperationListLocators)
+
+        self.check_add_amount_value_constant(amount)
+        time.sleep(1)
+        _, last_item_id = operation.operation_get_id(operations_locators.oper_list_values)
+        check = operation.operation_list_check_amount(last_item_id)
+        amount_txt = arithmetics + str(amount) + "₽"
+        print(f"{check} = {amount}")
+        assert check == amount_txt
+
+    def check_operation_temp(self, amount, arithmetics: str):
+        operation, operations_locators = self.setup_managers_and_locators(OperationListManager,
+                                                                          OperationListLocators)
+
+        self.check_add_amount_value_temp(amount)
+        time.sleep(1)
+        _, last_item_id = operation.operation_get_id(operations_locators.oper_list_values)
+        check = operation.operation_list_check_amount(last_item_id)
+        amount_txt = arithmetics + str(amount) + "₽"
+        print(f"{check} = {amount}")
+        assert check == amount_txt
+
+    # OPERATIONS DELETE
+    def check_operation_x_del_btn(self):
+        operation, operations_locators = self.setup_managers_and_locators(OperationListManager,
+                                                                          OperationListLocators)
+
+        _, last_item_id = operation.operation_get_id(operations_locators.oper_list_values)
+
+        btn_locator = operation.operation_list_get_btn(btn_name="delete",
+                                                       item_id=last_item_id
+                                                       )
+
+        self.do_element_click_presence("x", btn_locator)
+        time.sleep(1)
+
+        self.do_element_click_clickable("delete", operations_locators.oper_modal_delete_btn)
+        time.sleep(1)
+
+        _, updated_id = operation.operation_get_id(operations_locators.oper_list_values)
+        assert updated_id != last_item_id
+
+    def check_operation_x_cancel_btn(self):
+        operation, operations_locators = self.setup_managers_and_locators(OperationListManager,
+                                                                          OperationListLocators)
+
+        _, last_item_id = operation.operation_get_id(operations_locators.oper_list_values)
+
+        time.sleep(1)
+        btn_locator = operation.operation_list_get_btn(btn_name="delete",
+                                                       item_id=last_item_id
+                                                       )
+
+        self.do_element_click_presence("x", btn_locator)
+        time.sleep(1)
+
+        self.do_element_click_clickable("cancel", operations_locators.oper_modal_cancel_btn)
+        time.sleep(1)
+
+        _, updated_id = operation.operation_get_id(operations_locators.oper_list_values)
+        assert updated_id == last_item_id
+
+    # OPERATIONS EDIT
+    def check_operation_edit_btn(self, amount):
+        operation, operations_locators = self.setup_managers_and_locators(OperationListManager,
+                                                                          OperationListLocators)
+
+        _, last_item_id = operation.operation_get_id(operations_locators.oper_list_values)
+
+        btn_locator = operation.operation_list_get_btn(btn_name="edit",
+                                                       item_id=last_item_id
+                                                       )
+        old_amount = operation.operation_list_check_amount(last_item_id)
+
+        self.do_element_click_presence("edit", btn_locator)
+        time.sleep(1)
+
+        edit_field = self.get_element(operations_locators.oper_modal_edit_field)
+        edit_field.clear()
+        time.sleep(1)
+
+        self.do_element_send_keys("Field with old amount",
+                                  operations_locators.oper_modal_edit_field,
+                                  amount)
+
+        self.do_element_click_clickable("Add", operations_locators.oper_modal_add_btn)
+        time.sleep(2)
+
+        new_amount = operation.operation_list_check_amount(last_item_id)
+
+        assert old_amount != new_amount
