@@ -1,8 +1,8 @@
 name: Python application
 
 on:
-  pull_request:
-    branches: [ "master" ]
+  push:
+    branches: [ "PagesMain" ]
 
 permissions:
   contents: read
