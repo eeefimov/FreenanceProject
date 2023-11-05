@@ -37,10 +37,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Clone the gh-pages branch
+        run: git clone --branch gh-pages --single-branch https://github.com/yourusername/yourrepository.git gh-pages
+
       - name: Download historical data
-        uses: actions/download-artifact@v3
-        with:
-          name: allure-history
+        run: |
+          mkdir -p allure-history
+          cp -R gh-pages/history/* allure-history/
 
       - name: first_test
         if: "github.event.inputs.deployment_target == 'first_test'"
@@ -69,4 +72,3 @@ jobs:
           name: allure-history
           path: allure-history
           retention-days: 1
-        
