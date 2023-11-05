@@ -77,6 +77,7 @@ class TestRegisterPage:
     @pytest.mark.register_page
     @pytest.mark.parametrize("value, expected", params_register_page_verify_login_field)
     def test_register_login_field_validation(self, register_page, value, expected):
+        register_page.register_check_login_field_validation(value, expected)
 
     @allure.title("Verify Password Field on Register Page")
     @allure.suite("Register Page")
@@ -96,6 +97,7 @@ class TestRegisterPage:
     @pytest.mark.register_page
     @pytest.mark.parametrize("value, expected", params_register_page_verify_pass_field)
     def test_register_password_field_validation(self, register_page, value, expected):
+        register_page.register_check_password_field_validation(value, expected)
 
     @allure.title("Verify Password Confirmation Field on Register Page")
     @allure.suite("Register Page")
@@ -113,6 +115,7 @@ class TestRegisterPage:
     @pytest.mark.register_page
     @pytest.mark.parametrize("val, expected, validation", params_register_page_verify_pass_confirm_field)
     def test_register_password_confirm(self, register_page, val, expected, validation):
+        register_page.register_check_verify_pass_confirm(val, expected, validation)
 
     @allure.title("Register with Existing User")
     @allure.suite("Register Page")
@@ -137,3 +140,4 @@ class TestRegisterPage:
     @pytest.mark.register_page
     @pytest.mark.parametrize("email, login, pwd", params_register_page_exist_user_values)
     def test_register_check_exist_user(self, register_page, email, login, pwd):
+        register_page.register_check_exist_user(email, login, pwd)

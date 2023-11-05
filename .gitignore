@@ -5,6 +5,6 @@ reports
 allure-results
 allure-report
 senior_test_runs.yml
-__pycache__/
+TESTS/__pycache__/
 
 
