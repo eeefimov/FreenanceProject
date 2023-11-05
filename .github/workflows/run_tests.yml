@@ -69,3 +69,4 @@ jobs:
           name: allure-history
           path: allure-history
           retention-days: 1
+        
