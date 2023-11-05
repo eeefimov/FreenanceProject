@@ -13,83 +13,58 @@ on:
           - start_page
           - register_page
           - recovery_page
-#on:
-#  push:
-#    branches: [ "PagesMain" ]
-
-permissions:
-  contents: read
 
 jobs:
-  Tests:
+  ui-tests:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10"
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
 
-    - name: Install Chrome
-      run: sudo apt-get install google-chrome-stable
+      - name: Install Chrome
+        run: sudo apt-get update -y && sudo apt-get install google-chrome-stable -y
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-        pip install -r requirements.txt
-
-    - name: full_regression
-      if: "github.event.inputs.deployment_target == 'full_regression'"
-      run: |
-        pytest -sv TESTS/ --alluredir=allure-results || true
-
-    - name: start_page
-      if: "github.event.inputs.deployment_target == 'start_page'"
-      run: |
-        pytest -sv TESTS/test_start_page.py --alluredir=allure-results || true 
-
-    - name: register_page
-      if: "github.event.inputs.deployment_target == 'register_page'"
-      run: |
-        pytest -sv TESTS/test_register_page.py --alluredir=allure-results || true
-
-    - name: recovery_page
-      if: "github.event.inputs.deployment_target == 'recovery_page'"
-      run: |
-        pytest -sv TESTS/test_recovery_page.py --alluredir=allure-results || true
-
-    - name: Store allure results
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path:
-          allure-results
-        retention-days: 1
-
-
-  Generate-report:
-    runs-on: ubuntu-latest
-    needs: Tests
-    name: Generate report
-    steps:
-      - name: Set up JDK 11 and install Allure
+      - name: Install dependencies
         run: |
-          sudo apt-get update -y
+          python -m pip install --upgrade pip
+          pip install pytest
+          pip install -r requirements.txt
+
+      - name: Run Automated tests
+        run: |
+          # Depending on the deployment_target, run the appropriate set of tests
+          if [ "${{ github.event.inputs.deployment_target }}" == "full_regression" ]; then
+            pytest -sv TESTS/ --alluredir=allure-results || true
+          elif [ "${{ github.event.inputs.deployment_target }}" == "start_page" ]; then
+            pytest -sv TESTS/test_start_page.py --alluredir=allure-results || true
+          elif [ "${{ github.event.inputs.deployment_target }}" == "register_page" ]; then
+            pytest -sv TESTS/test_register_page.py --alluredir=allure-results || true
+          elif [ "${{ github.event.inputs.deployment_target }}" == "recovery_page" ]; then
+            pytest -sv TESTS/test_recovery_page.py --alluredir=allure-results || true
+          else
+            echo "Invalid deployment_target specified."
+          fi
+
+      - name: Generate Allure report
+        run: |
           sudo apt-get install openjdk-11-jre-headless curl tar -y
           mkdir -p $HOME/bin
           curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
           tar -zxvf allure-2.13.8.tgz -C $HOME/bin/
-          echo "export PATH=\$HOME/bin/allure-2.13.8/bin:\$PATH" >> $HOME/.bashrc  # Add to .bashrc
-          source $HOME/.bashrc  # Reload the shell
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site
-      - name: Store report
-        uses: actions/upload-artifact@v3
+          echo "export PATH=\$HOME/bin/allure-2.13.8/bin:\$PATH" >> $HOME/.bashrc
+          source $HOME/.bashrc
+          allure generate -c allure-results -o allure-report
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          name: _site
-          path: _site
-          retention-days: 1
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
