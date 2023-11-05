@@ -90,7 +90,8 @@ jobs:
 
       - name: Download artifacts
         uses: actions/download-artifact@v3
-        run: allure generate -c allure-results -o _site
+        
+      - run: allure generate -c allure-results -o _site
 
       - name: Store report
         uses: actions/upload-artifact@v3
@@ -99,6 +100,3 @@ jobs:
           path:
             _site
           retention-days: 1
-
-
-
