@@ -21,12 +21,13 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      - name: setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -36,28 +37,35 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Set up Allure
-        run: |
-          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
-          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
-          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-
-      - name: Run UI-tests
-        run: |
-          if [ "${{ github.event.inputs.deployment_target }}" == "first_test" ]; then
-            pytest TESTS/test_api.py --alluredir=allure-results
-          elif [ "${{ github.event.inputs.deployment_target }}" == "second_test" ]; then
-            pytest tests/test_button.py::test_button_exist_2 --alluredir=allure-results
-          else
-            pytest --alluredir=allure-results
-          fi
-
-      - name: Generate Allure report
-        run: |
-          allure generate -c allure-results -o allure-report
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Download historical data
+        uses: actions/download-artifact@v3
         with:
-          personal_token: ${{ secrets.CI_TOKEN }}
-          publish_dir: allure-report
+          name: allure-history
+
+      - name: first_test
+        if: "github.event.inputs.deployment_target == 'first_test'"
+        run: pytest TESTS/test_api.py --alluredir=allure-results
+        continue-on-error: true
+
+      - name: second_test
+        if: "github.event.inputs.deployment_target == 'second_test'"
+        run: pytest tests/test_button.py::test_button_exist_2 --alluredir=allure-results
+        continue-on-error: true
+
+      - name: all
+        if: "github.event.inputs.deployment_target == 'all'"
+        run: pytest --alluredir=allure-results
+        continue-on-error: true
+
+      - name: Generate and Store Historical Report
+        run: |
+          allure generate -c allure-results -o _site
+          cp -R allure-results/history/* allure-history/
+        continue-on-error: true
+
+      - name: Store Historical Data as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-history
+          path: allure-history
+          retention-days: 1
