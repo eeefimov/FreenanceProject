@@ -6,9 +6,10 @@ on:
       deployment_target:
         description: Choose target
         required: true
-        default:
+        default: full_regression
         type: choice
         options:
+          - full_regression
           - start_page
           - register_page
           - recovery_page
@@ -39,6 +40,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         pip install -r requirements.txt
+
+    - name: full_regression
+      if: "github.event.inputs.deployment_target == 'full_regression'"
+      run: |
+        pytest -sv TESTS/ || true
 
     - name: start_page
       if: "github.event.inputs.deployment_target == 'start_page'"
