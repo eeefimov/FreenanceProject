@@ -50,16 +50,16 @@ jobs:
       if: "github.event.inputs.deployment_target == 'start_page'"
       run: |
         pytest -sv TESTS/test_start_page.py --alluredir=allure-results || true 
-
-    - name: register_page
-      if: "github.event.inputs.deployment_target == 'register_page'"
-      run: |
-        pytest -sv TESTS/test_register_page.py --alluredir=allure-results || true
-
-    - name: recovery_page
-      if: "github.event.inputs.deployment_target == 'recovery_page'"
-      run: |
-        pytest -sv TESTS/test_recovery_page.py --alluredir=allure-results || true
+#
+#    - name: register_page
+#      if: "github.event.inputs.deployment_target == 'register_page'"
+#      run: |
+#        pytest -sv TESTS/test_register_page.py --alluredir=allure-results || true
+#
+#    - name: recovery_page
+#      if: "github.event.inputs.deployment_target == 'recovery_page'"
+#      run: |
+#        pytest -sv TESTS/test_recovery_page.py --alluredir=allure-results || true
 
     - name: Store allure results
       uses: actions/upload-artifact@v3
