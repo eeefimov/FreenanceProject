@@ -13,11 +13,6 @@ on:
           - second_test
           - all
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -41,9 +36,7 @@ jobs:
         run: git clone --branch gh-pages --single-branch https://github.com/eeefimov/FreenanceProject.git gh-pages
 
       - name: Download historical data
-        run: |
-          mkdir -p allure-history
-          cp -R gh-pages/history/* allure-history/
+        run: cp -R gh-pages/history allure-results
 
       - name: first_test
         if: "github.event.inputs.deployment_target == 'first_test'"
@@ -63,7 +56,7 @@ jobs:
       - name: Generate and Store Historical Report
         run: |
           allure generate -c allure-results -o _site
-          cp -R allure-results/history/* allure-history/
+          cp -R allure-results/history allure-history
         continue-on-error: true
 
       - name: Store Historical Data as Artifact
