@@ -15,17 +15,21 @@ from TESTS.settings import user_login, user_pass
 from PAGES.Locators import PageLinks
 import datetime
 
+
 @pytest.fixture(scope="function")
 def browser():
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("--incognito")
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument('--user-data-dir=tmp/chrome_profile')
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--start-maximized")
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(service=service, options=options)
+    # driver = webdriver.Chrome(options=options)
     driver.delete_all_cookies()
     driver.set_window_size(1280, 1024)
 
