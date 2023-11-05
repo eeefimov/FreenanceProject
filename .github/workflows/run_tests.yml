@@ -23,64 +23,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: setup Python
-        uses: actions/setup-python@v4
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
           python-version: "3.10"
+
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
-      - name: install dependencies
+
+      - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run selected tests based on deployment_target
+
+      - name: Set up Allure
+        run: |
+          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+
+      - name: Run UI-tests
         run: |
           if [ "${{ github.event.inputs.deployment_target }}" == "first_test" ]; then
-            pytest tests/test_button.py::test_button_exist --alluredir=allure-results
+            pytest TESTS/test_api.py --alluredir=allure-results
           elif [ "${{ github.event.inputs.deployment_target }}" == "second_test" ]; then
             pytest tests/test_button.py::test_button_exist_2 --alluredir=allure-results
-          elif [ "${{ github.event.inputs.deployment_target }}" == "all" ]; then
-            pytest --alluredir=allure-results
           else
-            echo "Invalid deployment_target specified"
-            exit 1
+            pytest --alluredir=allure-results
           fi
-        continue-on-error: true
-      - name: Store allure results
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path:
-            allure-results
-          retention-days: 1
 
-  generate-report:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'microsoft'
-          java-version: '17'
-      - run: sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz && sudo tar -zxvf allure-2.23.1.tgz -C /opt/ && sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
-      - run: allure generate -c allure-results -o _site
-      - name: Store generated report
-        uses: actions/upload-artifact@v3
-        with:
-          name: _site
-          path:
-            _site
-          retention-days: 1
+      - name: Generate Allure report
+        run: |
+          allure generate -c allure-results -o allure-report
 
-  publish-report:
-    runs-on: ubuntu-latest
-    needs: generate-report
-    steps:
-      - name: Download all workflow run artifacts
-        uses: actions/download-artifact@v3
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1.2.9
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.CI_TOKEN }}
+          publish_dir: allure-report
