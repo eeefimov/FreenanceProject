@@ -38,7 +38,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Clone the gh-pages branch
-        run: git clone --branch gh-pages --single-branch https://github.com/yourusername/yourrepository.git gh-pages
+        run: git clone --branch gh-pages --single-branch https://github.com/eeefimov/FreenanceProject.git gh-pages
 
       - name: Download historical data
         run: |
