@@ -44,7 +44,7 @@ jobs:
     - name: full_regression
       if: "github.event.inputs.deployment_target == 'full_regression'"
       run: |
-        pytest -sv TESTS/ || true
+        pytest -sv TESTS/ --alluredir=allure-results || true
 
     - name: start_page
       if: "github.event.inputs.deployment_target == 'start_page'"
@@ -54,12 +54,21 @@ jobs:
     - name: register_page
       if: "github.event.inputs.deployment_target == 'register_page'"
       run: |
-        pytest -sv TESTS/test_register_page.py || true
+        pytest -sv TESTS/test_register_page.py --alluredir=allure-results || true
 
     - name: recovery_page
       if: "github.event.inputs.deployment_target == 'recovery_page'"
       run: |
-        pytest -sv TESTS/test_recovery_page.py || true
+        pytest -sv TESTS/test_recovery_page.py --alluredir=allure-results || true
+
+    - name: Store allure results
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path:
+          allure-results
+        retention-days: 1
+
 
   Generate-report:
     runs-on: ubuntu-latest
@@ -78,5 +87,18 @@ jobs:
           sudo tar -zxvf allure-2.24.1.tgz -C /opt/ && \
           sudo ln -s /opt/allure-2.24.1.tgz/bin/allure /usr/bin/allure && \
           sudo rm allure-2.24.1.tgz
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        run: allure generate -c allure-results -o _site
+
+      - name: Store report
+        uses: actions/upload-artifact@v3
+        with:
+          name: _site
+          path:
+            _site
+          retention-days: 1
+
 
 
