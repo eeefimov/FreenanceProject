@@ -36,6 +36,15 @@ jobs:
           pip install pytest
           pip install -r requirements.txt
 
+      - name: Install Allure
+        run: |
+          sudo apt-get install openjdk-11-jre-headless curl tar -y
+          mkdir -p $HOME/bin
+          curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
+          tar -zxvf allure-2.13.8.tgz -C $HOME/bin/
+          echo "export PATH=\$HOME/bin/allure-2.13.8/bin:\$PATH" >> $HOME/.bashrc
+          source $HOME/.bashrc
+
       - name: Run Automated tests
         run: |
           # Depending on the deployment_target, run the appropriate set of tests
@@ -53,12 +62,6 @@ jobs:
 
       - name: Generate Allure report
         run: |
-          sudo apt-get install openjdk-11-jre-headless curl tar -y
-          mkdir -p $HOME/bin
-          curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
-          tar -zxvf allure-2.13.8.tgz -C $HOME/bin/
-          echo "export PATH=\$HOME/bin/allure-2.13.8/bin:\$PATH" >> $HOME/.bashrc
-          source $HOME/.bashrc
           allure generate -c allure-results -o allure-report
 
       - name: Deploy to GitHub Pages
