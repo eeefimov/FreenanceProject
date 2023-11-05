@@ -75,20 +75,21 @@ jobs:
     needs: Tests
     name: Generate report
     steps:
-    - name: Set up JDK 11 and install Allure
-      run: |
-        sudo apt-get update -y
-        sudo apt-get install openjdk-11-jre-headless curl tar -y
-        mkdir -p $HOME/bin
-        curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
-        tar -zxvf allure-2.13.8.tgz -C $HOME/bin/ && \
-        export PATH=$HOME/bin/allure-2.13.8/bin:$PATH
-    - name: Download artifacts
-      uses: actions/download-artifact@v3
-    - run: allure generate -c allure-results -o _site
-    - name: Store report
-      uses: actions/upload-artifact@v3
-      with:
-        name: _site
-        path: _site
-        retention-days: 1
+      - name: Set up JDK 11 and install Allure
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install openjdk-11-jre-headless curl tar -y
+          mkdir -p $HOME/bin
+          curl -o allure-2.13.8.tgz -Ls https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.13.8/allure-commandline-2.13.8.tgz && \
+          tar -zxvf allure-2.13.8.tgz -C $HOME/bin/
+          echo "export PATH=\$HOME/bin/allure-2.13.8/bin:\$PATH" >> $HOME/.bashrc  # Add to .bashrc
+          source $HOME/.bashrc  # Reload the shell
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      - run: allure generate -c allure-results -o _site
+      - name: Store report
+        uses: actions/upload-artifact@v3
+        with:
+          name: _site
+          path: _site
+          retention-days: 1
