@@ -72,16 +72,16 @@ jobs:
           mkdir -p allure-results/history
           git clone --branch gh-pages --single-branch https://github.com/eeefimov/FreenanceProject.git gh-pages
           cp -R gh-pages/history/* allure-results/history
-#
-#        - name: Generate Allure report
-#          run: |
-#            allure generate -c allure-results -o allure-report
-#
-#        - name: Deploy to GitHub Pages
-#          uses: peaceiris/actions-gh-pages@v3
-#          with:
-#            personal_token: ${{ secrets.CI_TOKEN }}
-#            publish_dir: allure-report
+
+         - name: Generate Allure report
+            run: |
+            allure generate -c allure-results -o allure-report
+
+          - name: Deploy to GitHub Pages
+            uses: peaceiris/actions-gh-pages@v3
+            with:
+              personal_token: ${{ secrets.CI_TOKEN }}
+              publish_dir: allure-report
 
 
 ## no history (run Tests, Works fine)
