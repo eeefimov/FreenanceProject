@@ -72,10 +72,7 @@ jobs:
           mkdir -p allure-results/history
           git clone --branch gh-pages --single-branch https://github.com/eeefimov/FreenanceProject.git gh-pages
           cp -R gh-pages/history/* allure-results/history
-
-         - name: Generate Allure report
-            run: |
-            allure generate -c allure-results -o allure-report
+          allure generate -c allure-results -o allure-report
 
           - name: Deploy to GitHub Pages
             uses: peaceiris/actions-gh-pages@v3
