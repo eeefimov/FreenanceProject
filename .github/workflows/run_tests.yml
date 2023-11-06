@@ -1,4 +1,3 @@
-# no history
 name: Automated tests
 
 on:
@@ -68,6 +67,10 @@ jobs:
             pytest -sv TESTS/ --alluredir=allure-results
           fi
 
+      - name: Copy historical data
+        run: |
+          cp -R history allure-results/history
+
       - name: Generate Allure report
         run: |
           allure generate -c allure-results -o allure-report
@@ -77,3 +80,84 @@ jobs:
         with:
           personal_token: ${{ secrets.CI_TOKEN }}
           publish_dir: allure-report
+
+
+## no history (run Tests, Works fine)
+#name: Automated tests
+#
+#on:
+#  workflow_dispatch:
+#    inputs:
+#      deployment_target:
+#        description: Choose target
+#        required: true
+#        default: first_test
+#        type: choice
+#        options:
+#          - test_api
+#          - start_page
+#          - register_page
+#          - recovery_page
+#          - income_page
+#          - outcome_page
+#          - saves_page
+#          - all
+#
+#permissions:
+#  contents: read
+#  pages: write
+#  id-token: write
+#
+#jobs:
+#  test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v2
+#        with:
+#          python-version: "3.10"
+#
+#      - name: Install Chrome
+#        run: sudo apt-get install google-chrome-stable
+#
+#      - name: Install dependencies
+#        run: pip install -r requirements.txt
+#
+#      - name: Set up Allure
+#        run: |
+#          sudo wget https://github.com/allure-framework/allure2/releases/download/2.23.1/allure-2.23.1.tgz
+#          sudo tar -zxvf allure-2.23.1.tgz -C /opt/
+#          sudo ln -s /opt/allure-2.23.1/bin/allure /usr/bin/allure
+#
+#      - name: Run UI-tests
+#        run: |
+#          if [ "${{ github.event.inputs.deployment_target }}" == "test_api" ]; then
+#            pytest TESTS/test_api.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "start_page" ]; then
+#            pytest TESTS/test_start_page.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "register_page" ]; then
+#            pytest TESTS/test_register_page.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "recovery_page" ]; then
+#            pytest TESTS/test_recovery_page.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "income_page" ]; then
+#            pytest TESTS/test_income_page.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "outcome_page" ]; then
+#            pytest TESTS/test_outcome_page.py --alluredir=allure-results
+#          elif [ "${{ github.event.inputs.deployment_target }}" == "saves_page" ]; then
+#            pytest TESTS/test_saves_page.py --alluredir=allure-results
+#          else
+#            pytest -sv TESTS/ --alluredir=allure-results
+#          fi
+#
+#      - name: Generate Allure report
+#        run: |
+#          allure generate -c allure-results -o allure-report
+#
+#      - name: Deploy to GitHub Pages
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          personal_token: ${{ secrets.CI_TOKEN }}
+#          publish_dir: allure-report
