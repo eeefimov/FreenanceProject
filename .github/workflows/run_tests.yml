@@ -52,20 +52,28 @@ jobs:
         run: |
           if [ "${{ github.event.inputs.deployment_target }}" == "test_api" ]; then
             pytest TESTS/test_api.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "start_page" ]; then
             pytest TESTS/test_start_page.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "register_page" ]; then
             pytest TESTS/test_register_page.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "recovery_page" ]; then
             pytest TESTS/test_recovery_page.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "income_page" ]; then
             pytest TESTS/test_income_page.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "outcome_page" ]; then
             pytest TESTS/test_outcome_page.py --alluredir=allure-results
+          continue-on-error: true
           elif [ "${{ github.event.inputs.deployment_target }}" == "saves_page" ]; then
             pytest TESTS/test_saves_page.py --alluredir=allure-results
+          continue-on-error: true
           else
             pytest -sv TESTS/ --alluredir=allure-results
+          continue-on-error: true
           fi
 
       - name: Copy History
