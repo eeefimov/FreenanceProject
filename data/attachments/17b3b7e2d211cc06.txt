@@ -1,0 +1,17 @@
+
+
+{'id': 2161, 'user': 'newtestuser', 'category_id': 5347, 'categoryName': 'nQQsfITBiN', 'category_type': 'once', 'sum': 7387.01, 'date': '06 Ноября 2023, Пн'}
+
+
+{'id': 2160, 'user': 'newtestuser', 'category_id': 5354, 'categoryName': 'yKOUoryTvC', 'category_type': 'constant', 'sum': 4899.91, 'date': '06 Ноября 2023, Пн'}
+
+
+{'id': 2158, 'user': 'newtestuser', 'category_id': 5342, 'categoryName': 'tbrtbrscsc', 'category_type': 'once', 'sum': 9367.26, 'date': '06 Ноября 2023, Пн'}
+
+
+{'id': 2157, 'user': 'newtestuser', 'category_id': 5339, 'categoryName': 'Zxcxzczczx', 'category_type': 'constant', 'sum': 387.8, 'date': '06 Ноября 2023, Пн'}
+
+
+{'id': 2156, 'user': 'newtestuser', 'category_id': 5339, 'categoryName': 'Zxcxzczczx', 'category_type': 'constant', 'sum': 0.1, 'date': '06 Ноября 2023, Пн'}
+
+
