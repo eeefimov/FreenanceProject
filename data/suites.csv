@@ -1,80 +1,297 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Nov 06 14:14:54 UTC 2023","Mon Nov 06 14:14:58 UTC 2023","3344","TESTS","Start Page","TestStartPage","","","Open Start Page","
-    Go to the start page of the website and verify the presence of essential elements.
+"passed","Mon Nov 06 15:07:04 UTC 2023","Mon Nov 06 15:07:14 UTC 2023","9885","TESTS","Income Page","TestIncomePage","","","Delete Category from Temp Income list","
+    Attempt to delete selected category from Temp Income list
+    when user click 'Delete' button in modal window.
 
     Precondition:
-    - Navigate to the start page.
+    - User uses valid login and password
+    - One o more category exist in the list
 
     Expected Result:
-    - The start page opens successfully in the browser.
-    - All necessary elements are visible.
+    - The selected category is deleted from Temp Income list
+    when user click 'Delete' button in modal window.
     "
-"passed","Mon Nov 06 14:15:31 UTC 2023","Mon Nov 06 14:15:34 UTC 2023","2623","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:08:09 UTC 2023","Mon Nov 06 15:08:17 UTC 2023","7824","TESTS","Income Page","TestIncomePage","","","Cancel Deleting Amount in Operation List","
+    Attempt to delete amount from Operation list. User clic 'x' in the List item line.
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
+    - One o more category exist in the list
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
     "
-"passed","Mon Nov 06 14:15:01 UTC 2023","Mon Nov 06 14:15:05 UTC 2023","3995","TESTS","Start Page","TestStartPage","","","Start Page Login with Valid Credentials","
-    Attempt to log in using valid user credentials on the Start page.
+"passed","Mon Nov 06 15:09:09 UTC 2023","Mon Nov 06 15:09:26 UTC 2023","16961","TESTS","Income Page","TestIncomePage","","","test_total_amount_temp_income",""
+"passed","Mon Nov 06 15:08:39 UTC 2023","Mon Nov 06 15:08:47 UTC 2023","8042","TESTS","Income Page","TestIncomePage","","","Clear date in calendar (Income Page)","
+    Attempt to clear date in calendar using ""Clear"" button:
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
 
     Expected Result:
-    - Login with valid credentials passes.
+    - Current date cleared in calendar when user click 'Clear' button in calendar.
     "
-"passed","Mon Nov 06 14:15:07 UTC 2023","Mon Nov 06 14:15:10 UTC 2023","2791","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:08:49 UTC 2023","Mon Nov 06 15:09:07 UTC 2023","17152","TESTS","Income Page","TestIncomePage","","","test_total_amount_const_income",""
+"passed","Mon Nov 06 15:04:36 UTC 2023","Mon Nov 06 15:04:44 UTC 2023","8652","TESTS","Income Page","TestIncomePage","","","Add new category to Constant Income list","
+    Attempt to add a new category to Constant Income list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - New category is added to Constant income (DropList).
     "
-"passed","Mon Nov 06 14:15:12 UTC 2023","Mon Nov 06 14:15:15 UTC 2023","2752","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:06:42 UTC 2023","Mon Nov 06 15:06:50 UTC 2023","8619","TESTS","Income Page","TestIncomePage","","","Cancel Delete Category operation from Temp Income list","
+    Attempt to cancel delete selected category operation from Temp Income list
+    when user click 'Cancel' button in modal window.
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
+    - One o more category exist in the list
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - The selected category is not deleted from Temp Income list
+    when user click 'Cancel' button in modal window.
     "
-"passed","Mon Nov 06 14:15:26 UTC 2023","Mon Nov 06 14:15:29 UTC 2023","2884","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:06:08 UTC 2023","Mon Nov 06 15:06:17 UTC 2023","9671","TESTS","Income Page","TestIncomePage","","","Archive Category from Constant Income list","
+    Attempt to archive selected category from Constant Income list
+    when user click 'Archive' button in modal window.
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
+    - One o more category exist in the list
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - The selected category is archived from Constant Income list
+    when user click 'Archive' button in modal window.
     "
-"passed","Mon Nov 06 14:15:21 UTC 2023","Mon Nov 06 14:15:24 UTC 2023","2877","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:07:38 UTC 2023","Mon Nov 06 15:07:47 UTC 2023","8791","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (temp)","
+    Attempt to add random amount to exist category in Temp Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
+    - Positive amount
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
     "
-"passed","Mon Nov 06 14:15:17 UTC 2023","Mon Nov 06 14:15:19 UTC 2023","2703","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
+"passed","Mon Nov 06 15:08:31 UTC 2023","Mon Nov 06 15:08:37 UTC 2023","5861","TESTS","Income Page","TestIncomePage","","","Set current date in calendar (Income Page)","
+    Attempt to set current date in calendar using ""Today"" button:
 
     Precondition:
-    - Navigate to the Start page.
+    - User uses valid login and password
 
     Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    - Current date set in calendar when user click 'Today' button in calendar.
+    "
+"passed","Mon Nov 06 15:06:52 UTC 2023","Mon Nov 06 15:07:02 UTC 2023","9877","TESTS","Income Page","TestIncomePage","","","Delete Category from Constant Income list","
+    Attempt to delete selected category from Constant Income list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Constant Income list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Mon Nov 06 15:07:27 UTC 2023","Mon Nov 06 15:07:36 UTC 2023","8865","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Mon Nov 06 15:05:38 UTC 2023","Mon Nov 06 15:05:45 UTC 2023","7762","TESTS","Income Page","TestIncomePage","","","Length Error Message does not shows in Modal Window repeat open(Temp Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Temp Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List, 
+    then close window and try again.
+    "
+"passed","Mon Nov 06 15:06:19 UTC 2023","Mon Nov 06 15:06:29 UTC 2023","9739","TESTS","Income Page","TestIncomePage","","","Archive Category from Temp Income list","
+    Attempt to archive selected category from Temp Income list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Temp Income list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Mon Nov 06 15:08:19 UTC 2023","Mon Nov 06 15:08:29 UTC 2023","10057","TESTS","Income Page","TestIncomePage","","","Edit Amount in Operation List (Income)","
+    Attempt to edit amount in Operation list. User click 'edit' icon in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount edited and updated in Operation list after user click 'edit' icon in Item line in the list.
+    "
+"passed","Mon Nov 06 15:06:31 UTC 2023","Mon Nov 06 15:06:40 UTC 2023","8717","TESTS","Income Page","TestIncomePage","","","Cancel Delete Category operation from Constant Income list","
+    Attempt to cancel delete selected category operation from Constant Income list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Constant Income list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Mon Nov 06 15:05:48 UTC 2023","Mon Nov 06 15:05:55 UTC 2023","7816","TESTS","Income Page","TestIncomePage","","","Exists Error Message does not shows in Modal Window repeat open(Constant Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Incomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List, 
+    then close window and try again.
+    "
+"passed","Mon Nov 06 15:05:20 UTC 2023","Mon Nov 06 15:05:26 UTC 2023","5741","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Temp Income list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Temp income category with a name more than 14 characters.
+    "
+"passed","Mon Nov 06 15:07:16 UTC 2023","Mon Nov 06 15:07:25 UTC 2023","8861","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Mon Nov 06 15:07:49 UTC 2023","Mon Nov 06 15:07:57 UTC 2023","8654","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (temp)","
+    Attempt to add random amount to exist category in Temp Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Mon Nov 06 15:04:46 UTC 2023","Mon Nov 06 15:04:54 UTC 2023","7672","TESTS","Income Page","TestIncomePage","","","Add new category to Temp Income list","
+    Attempt to add a new category to Temp Income list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Temp income (DropList).
+    "
+"passed","Mon Nov 06 15:05:28 UTC 2023","Mon Nov 06 15:05:35 UTC 2023","7658","TESTS","Income Page","TestIncomePage","","","Length Error Message does not shows in Modal Window repeat open(Constant Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Constant Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List, 
+    then close window and try again.
+    "
+"passed","Mon Nov 06 15:08:00 UTC 2023","Mon Nov 06 15:08:07 UTC 2023","7960","TESTS","Income Page","TestIncomePage","","","Delete Amount in Operation List (Income)","
+    Attempt to delete amount from Operation list. User clic 'x' in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
+    "
+"passed","Mon Nov 06 15:05:58 UTC 2023","Mon Nov 06 15:06:05 UTC 2023","7775","TESTS","Income Page","TestIncomePage","","","Exists Error Message does not shows in Modal Window repeat open(Temp Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Incomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List, 
+    then close window and try again.
+    "
+"passed","Mon Nov 06 15:05:04 UTC 2023","Mon Nov 06 15:05:10 UTC 2023","5704","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Temp Income)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Incomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Incomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List.
+    "
+"passed","Mon Nov 06 15:04:56 UTC 2023","Mon Nov 06 15:05:02 UTC 2023","5845","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Constant Income)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Incomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Incomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List.
+    "
+"passed","Mon Nov 06 15:05:12 UTC 2023","Mon Nov 06 15:05:18 UTC 2023","5958","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Constant Income list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Constant income category with a name more than 14 characters.
     "
