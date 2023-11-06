@@ -1,0 +1,17 @@
+
+
+{'id': 2154, 'user': 'newtestuser', 'category_id': 5342, 'categoryName': 'tbrtbrscsc', 'category_type': 'once', 'sum': 6677.71, 'date': '05 Ноября 2023, Вс'}
+
+
+{'id': 2153, 'user': 'newtestuser', 'category_id': 5338, 'categoryName': 'qwwqwqw', 'category_type': 'constant', 'sum': 9935.27, 'date': '05 Ноября 2023, Вс'}
+
+
+{'id': 2151, 'user': 'newtestuser', 'category_id': 5344, 'categoryName': 'popoipoipo', 'category_type': 'once', 'sum': 3897.33, 'date': '05 Ноября 2023, Вс'}
+
+
+{'id': 2150, 'user': 'newtestuser', 'category_id': 5338, 'categoryName': 'qwwqwqw', 'category_type': 'constant', 'sum': 4397.14, 'date': '05 Ноября 2023, Вс'}
+
+
+{'id': 2149, 'user': 'newtestuser', 'category_id': 5338, 'categoryName': 'qwwqwqw', 'category_type': 'constant', 'sum': 0.1, 'date': '05 Ноября 2023, Вс'}
+
+
