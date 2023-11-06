@@ -1,1 +1,5 @@
-{"uid":"98d3104e051c652961429bf95fa0b5d6","children":[{"name":"TESTS","children":[{"name":"test_api","children":[{"name":"test_get_five","uid":"39411e1055b01b41","parentUid":"9f08fdc230bffe0ebfbb18e70befc327","status":"passed","time":{"start":1699264504087,"stop":1699264504890,"duration":803},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[],"tags":[]}],"uid":"9f08fdc230bffe0ebfbb18e70befc327"}],"uid":"347ecdcc58def377597886753849554a"}],"name":"suites"}
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ ],
+  "name" : "suites"
+}

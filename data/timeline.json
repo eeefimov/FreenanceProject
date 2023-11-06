@@ -1,1 +1,5 @@
-{"uid":"ab17fc5a4eb3bca4b216b548c7f9fcbc","children":[{"name":"fv-az1146-81","children":[{"name":"1895-MainThread","children":[{"name":"test_get_five","uid":"39411e1055b01b41","parentUid":"2487455f1d75831dd764cf215df69ae5","status":"passed","time":{"start":1699264504087,"stop":1699264504890,"duration":803},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[],"tags":[]}],"uid":"2487455f1d75831dd764cf215df69ae5"}],"uid":"a82425437b87eb3f64608e110f2dda13"}],"name":"timeline"}
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ ],
+  "name" : "timeline"
+}
