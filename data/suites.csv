@@ -1,65 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Nov 06 14:11:47 UTC 2023","Mon Nov 06 14:11:51 UTC 2023","4051","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:34 UTC 2023","Mon Nov 06 14:11:38 UTC 2023","4410","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:40 UTC 2023","Mon Nov 06 14:11:45 UTC 2023","4242","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:15 UTC 2023","Mon Nov 06 14:11:20 UTC 2023","4178","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:28 UTC 2023","Mon Nov 06 14:11:32 UTC 2023","4055","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:22 UTC 2023","Mon Nov 06 14:11:26 UTC 2023","3967","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
-    Attempt to log in using various combinations of invalid credentials on the Start page.
-
-    Precondition:
-    - Navigate to the Start page.
-
-    Expected Result:
-    - Login with invalid credentials fails.
-    - The login error message is displayed for invalid login and/or password combinations and empty fields.
-    "
-"passed","Mon Nov 06 14:11:00 UTC 2023","Mon Nov 06 14:11:06 UTC 2023","5424","TESTS","Start Page","TestStartPage","","","Open Start Page","
+"passed","Mon Nov 06 14:14:54 UTC 2023","Mon Nov 06 14:14:58 UTC 2023","3344","TESTS","Start Page","TestStartPage","","","Open Start Page","
     Go to the start page of the website and verify the presence of essential elements.
 
     Precondition:
@@ -69,7 +9,17 @@
     - The start page opens successfully in the browser.
     - All necessary elements are visible.
     "
-"passed","Mon Nov 06 14:11:08 UTC 2023","Mon Nov 06 14:11:13 UTC 2023","5415","TESTS","Start Page","TestStartPage","","","Start Page Login with Valid Credentials","
+"passed","Mon Nov 06 14:15:31 UTC 2023","Mon Nov 06 14:15:34 UTC 2023","2623","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Mon Nov 06 14:15:01 UTC 2023","Mon Nov 06 14:15:05 UTC 2023","3995","TESTS","Start Page","TestStartPage","","","Start Page Login with Valid Credentials","
     Attempt to log in using valid user credentials on the Start page.
 
     Precondition:
@@ -77,4 +27,54 @@
 
     Expected Result:
     - Login with valid credentials passes.
+    "
+"passed","Mon Nov 06 14:15:07 UTC 2023","Mon Nov 06 14:15:10 UTC 2023","2791","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Mon Nov 06 14:15:12 UTC 2023","Mon Nov 06 14:15:15 UTC 2023","2752","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Mon Nov 06 14:15:26 UTC 2023","Mon Nov 06 14:15:29 UTC 2023","2884","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Mon Nov 06 14:15:21 UTC 2023","Mon Nov 06 14:15:24 UTC 2023","2877","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Mon Nov 06 14:15:17 UTC 2023","Mon Nov 06 14:15:19 UTC 2023","2703","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
     "
