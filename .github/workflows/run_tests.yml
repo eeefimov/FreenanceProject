@@ -81,7 +81,7 @@ jobs:
           personal_token: ${{ secrets.CI_TOKEN }}
           publish_dir: allure-report
 
-
+########################################################
 ## no history (run Tests, Works fine)
 #name: Automated tests
 #
