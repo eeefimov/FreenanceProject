@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun Nov 05 23:03:43 UTC 2023","Sun Nov 05 23:03:45 UTC 2023","2090","TESTS","test_api","","","","test_get_five",""
+"passed","Mon Nov 06 09:55:04 UTC 2023","Mon Nov 06 09:55:04 UTC 2023","803","TESTS","test_api","","","","test_get_five",""
