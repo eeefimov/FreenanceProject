@@ -1,7 +1,8 @@
 import allure
 import pytest
-from TESTS.utils import randomize_float, randomize_latin_string
 from TESTS.params import params_amount_values
+from TESTS.settings import user_login, user_pass
+from TESTS.utils import randomize_float, randomize_latin_string
 from PAGES.Locators import CategoriesLocators, OperationListLocators
 
 
@@ -64,8 +65,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_category_name_error_constant_outcome(self, outcome_page):
+    def test_check_exist_category_name_error_constant_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_const.error_name_exist()
 
     @allure.title("Error Message in Modal Window When New Category Name Already Exists in the List (Temp)")
@@ -84,8 +89,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_category_name_error_temp_outcome(self, outcome_page):
+    def test_check_exist_category_name_error_temp_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_temp.error_name_exist()
 
     @allure.title("Error Message in Modal Window When New Category Name Is More Than 14 Characters (Constant list)")
@@ -189,8 +198,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_error_repeat_constant_outcome(self, outcome_page):
+    def test_check_exist_error_repeat_constant_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_const.repeat_error_name_exist()
 
     @allure.title("Exists Error Message does not shows in Modal Window repeat open(Temp)")
@@ -210,8 +223,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_error_repeat_temp_outcome(self, outcome_page):
+    def test_check_exist_error_repeat_temp_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_temp.repeat_error_name_exist()
 
     # #########################CATEGORIES DELETE ######################################################
@@ -231,8 +248,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_archive_random_constant_outcome(self, outcome_page):
+    def test_check_archive_random_constant_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_const.category_modal_action("В архив")
 
     @allure.title("Archive Category from Temp Outcome list")
@@ -251,8 +272,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_archive_random_temp_outcome(self, outcome_page):
+    def test_check_archive_random_temp_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_temp.category_modal_action("В архив")
 
     @allure.title("Cancel Delete Category operation from Constant Outcome list")
@@ -271,8 +296,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_cancel_random_constant_outcome(self, outcome_page):
+    def test_check_cancel_random_constant_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_const.category_modal_action("Отмена")
 
     @allure.title("Cancel Delete Category operation from Temp Outcome list")
@@ -291,8 +320,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_cancel_random_temp_outcome(self, outcome_page):
+    def test_check_cancel_random_temp_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_temp.category_modal_action("Отмена")
 
     @allure.title("Delete Category from Constant Outcome list")
@@ -311,8 +344,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_delete_random_constant_outcome(self, outcome_page):
+    def test_check_delete_random_constant_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_const.category_modal_action("Удалить")
 
     @allure.title("Delete Category from Temp Outcome list")
@@ -331,8 +368,12 @@ class TestOutcomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_delete_random_temp_outcome(self, outcome_page):
+    def test_check_delete_random_temp_outcome(self, start_page, outcome_page):
+        # Precondition:
         outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        start_page.start_page_login(user_login, user_pass, False)
         outcome_temp.category_modal_action("Удалить")
 
     @allure.title("Delete Category from Saves Outcome list")
@@ -428,7 +469,11 @@ class TestOutcomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
-    def test_check_operation_list_constant_outcome(self, outcome_page, value):
+    def test_check_operation_list_constant_outcome(self, start_page, outcome_page, value):
+        # Precondition:
+        outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        # Test:
         outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
                                      add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
                                      add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
@@ -455,11 +500,15 @@ class TestOutcomePage:
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
     def test_check_operation_list_temp_outcome(self, outcome_page, value):
-        outcome_const = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
-                                     add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
-                                     add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
-                                     )
-        outcome_const.operation_add_amount(value)
+        # Precondition:
+        outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        outcome_temp.add_category(randomize_latin_string(10))
+        # Test
+        outcome_temp = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
+                                    add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
+                                    add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
+                                    )
+        outcome_temp.operation_add_amount(value)
 
     @allure.title("Delete Amount in Operation List")
     @allure.feature("Operation list")
@@ -476,6 +525,15 @@ class TestOutcomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_del_btn_outcome(self, outcome_page):
+        # Precondition:
+        outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        outcome_const = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
+                                     add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
+                                     add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
+                                     )
+        outcome_const.operation_add_amount(randomize_float(10000))
+        # Test
         outcome = outcome_page(btn_name_locator=OperationListLocators.oper_modal_delete_btn)
         outcome.operations_del(btn_name="delete")
 
@@ -494,6 +552,15 @@ class TestOutcomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_cancel_btn_outcome(self, outcome_page):
+        # Precondition:
+        outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        outcome_const = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
+                                     add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
+                                     add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
+                                     )
+        outcome_const.operation_add_amount(randomize_float(10000))
+        # Test
         outcome = outcome_page(btn_name_locator=OperationListLocators.oper_modal_cancel_btn)
         outcome.operations_del(btn_name="cancel")
 
@@ -512,6 +579,15 @@ class TestOutcomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_edit_btn_outcome(self, start_page, outcome_page):
+        # Precondition:
+        outcome_const = outcome_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        outcome_const.add_category(randomize_latin_string(10))
+        outcome_const = outcome_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
+                                     add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
+                                     add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
+                                     )
+        outcome_const.operation_add_amount(randomize_float(10000))
+        # Test
         outcome = outcome_page()
         outcome.operation_edit_btn(randomize_float(10000))
 

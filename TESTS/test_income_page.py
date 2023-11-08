@@ -1,4 +1,3 @@
-import time
 import allure
 import pytest
 from TESTS.params import params_amount_values
@@ -567,7 +566,6 @@ class TestIncomePage:
         old_amount = income.total_amount(CategoriesLocators.total_amount)
         summ = randomize_float(10000)
         income.operation_add_amount(amount=summ)
-        time.sleep(3)
         new_amount = income.total_amount(CategoriesLocators.total_amount)
         assert new_amount == old_amount + summ
 
@@ -583,7 +581,6 @@ class TestIncomePage:
         old_amount = income.total_amount(CategoriesLocators.balance_aside)
         summ = randomize_float(10000)
         income.operation_add_amount(amount=summ)
-        time.sleep(3)
         new_amount = income.total_amount(CategoriesLocators.balance_aside)
         assert new_amount == old_amount + summ
 
