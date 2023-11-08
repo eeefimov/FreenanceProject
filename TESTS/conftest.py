@@ -21,7 +21,7 @@ def browser():
     # driver_path = ChromeDriverManager().install()
     # service = Service(driver_path)
     options = Options()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("--incognito")
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument('--user-data-dir=tmp/chrome_profile')
