@@ -1,0 +1,1155 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 08 11:30:47 UTC 2023","Wed Nov 08 11:30:48 UTC 2023","456","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come name '']",""
+"passed","Wed Nov 08 11:32:11 UTC 2023","Wed Nov 08 11:32:19 UTC 2023","8102","TESTS","Income Page","TestIncomePage","","","Length Error Message does not shows in Modal Window repeat open(Temp Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Temp Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:31:52 UTC 2023","Wed Nov 08 11:31:58 UTC 2023","5885","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Temp Income list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Temp income category with a name more than 14 characters.
+    "
+"passed","Wed Nov 08 11:39:59 UTC 2023","Wed Nov 08 11:40:08 UTC 2023","8816","TESTS","Outcome Page","TestOutcomePage","","","Exists Error Message does not shows in Modal Window repeat open(Temp)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Outcomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Outcomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Temp Outcomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:45:44 UTC 2023","Wed Nov 08 11:45:50 UTC 2023","6120","TESTS","Register Page","TestRegisterPage","","","Verify Email Field on Register Page","
+    Verify the email field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for email,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:30:46 UTC 2023","Wed Nov 08 11:30:47 UTC 2023","477","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 10]",""
+"passed","Wed Nov 08 11:30:32 UTC 2023","Wed Nov 08 11:30:33 UTC 2023","511","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for last-5-incomecash/]",""
+"passed","Wed Nov 08 11:50:25 UTC 2023","Wed Nov 08 11:50:28 UTC 2023","2847","TESTS","Start Page","TestStartPage","","","Open Start Page","
+    Go to the start page of the website and verify the presence of essential elements.
+
+    Precondition:
+    - Navigate to the start page.
+
+    Expected Result:
+    - The start page opens successfully in the browser.
+    - All necessary elements are visible.
+    "
+"passed","Wed Nov 08 11:32:56 UTC 2023","Wed Nov 08 11:33:14 UTC 2023","17861","TESTS","Income Page","TestIncomePage","","","Archive Category from Constant Income list","
+    Attempt to archive selected category from Constant Income list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Constant Income list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:41:13 UTC 2023","Wed Nov 08 11:41:24 UTC 2023","10879","TESTS","Outcome Page","TestOutcomePage","","","Delete Category from Temp Outcome list","
+    Attempt to delete selected category from Temp Outcome list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Temp Outcome list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:50:41 UTC 2023","Wed Nov 08 11:50:44 UTC 2023","3015","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:30:42 UTC 2023","Wed Nov 08 11:30:43 UTC 2023","518","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 100]",""
+"passed","Wed Nov 08 11:30:41 UTC 2023","Wed Nov 08 11:30:41 UTC 2023","438","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for outcome-categories/]",""
+"passed","Wed Nov 08 11:38:48 UTC 2023","Wed Nov 08 11:38:56 UTC 2023","7505","TESTS","Outcome Page","TestOutcomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Constant)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Outcomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Outcomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Constant Outcomes List.
+    "
+"passed","Wed Nov 08 11:39:48 UTC 2023","Wed Nov 08 11:39:57 UTC 2023","9190","TESTS","Outcome Page","TestOutcomePage","","","Exists Error Message does not shows in Modal Window repeat open(Constant)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Outcomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Outcomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Constant Outcomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:30:35 UTC 2023","Wed Nov 08 11:30:35 UTC 2023","434","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for last-5-outcomecash/]",""
+"passed","Wed Nov 08 11:33:36 UTC 2023","Wed Nov 08 11:33:54 UTC 2023","17316","TESTS","Income Page","TestIncomePage","","","Cancel Delete Category operation from Constant Income list","
+    Attempt to cancel delete selected category operation from Constant Income list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Constant Income list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:35:11 UTC 2023","Wed Nov 08 11:35:27 UTC 2023","16099","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:38:37 UTC 2023","Wed Nov 08 11:38:46 UTC 2023","8771","TESTS","Outcome Page","TestOutcomePage","","","Add new category to Temp Outcome","
+    Attempt to add a new category to Temp Outcome list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Temp Outcome (DropList).
+    "
+"passed","Wed Nov 08 11:41:00 UTC 2023","Wed Nov 08 11:41:11 UTC 2023","10853","TESTS","Outcome Page","TestOutcomePage","","","Delete Category from Constant Outcome list","
+    Attempt to delete selected category from Constant Outcome list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Constant Outcome list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:50:36 UTC 2023","Wed Nov 08 11:50:39 UTC 2023","2981","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:39:26 UTC 2023","Wed Nov 08 11:39:35 UTC 2023","8932","TESTS","Outcome Page","TestOutcomePage","","","Length Error Message does not shows in Modal Window repeat open(Constant)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Constant Outcomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Constant Outcomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:34:14 UTC 2023","Wed Nov 08 11:34:32 UTC 2023","18155","TESTS","Income Page","TestIncomePage","","","Delete Category from Constant Income list","
+    Attempt to delete selected category from Constant Income list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Constant Income list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:47:41 UTC 2023","Wed Nov 08 11:47:46 UTC 2023","5350","TESTS","Register Page","TestRegisterPage","","","Verify Password Confirmation Field on Register Page","
+    Verify the password confirmation field on the Register Page.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If values is not match in both fields (for password and confirm),
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:33:16 UTC 2023","Wed Nov 08 11:33:34 UTC 2023","18194","TESTS","Income Page","TestIncomePage","","","Archive Category from Temp Income list","
+    Attempt to archive selected category from Temp Income list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Temp Income list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:30:43 UTC 2023","Wed Nov 08 11:30:43 UTC 2023","457","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 10]",""
+"passed","Wed Nov 08 11:45:33 UTC 2023","Wed Nov 08 11:45:39 UTC 2023","6112","TESTS","Register Page","TestRegisterPage","","","Verify Email Field on Register Page","
+    Verify the email field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for email,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:49:39 UTC 2023","Wed Nov 08 11:49:49 UTC 2023","9927","TESTS","Saves Page","TestSavesPage","","","Cancel Delete Category operation from Saves list","
+    Attempt to cancel delete selected category operation from Saves list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Saves list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:49:04 UTC 2023","Wed Nov 08 11:49:13 UTC 2023","8919","TESTS","Saves Page","TestSavesPage","","","Length Error Message does not shows in Modal Window repeat open(Saves)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in Saves list then close window and repeat.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in Saves List,
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:37:25 UTC 2023","Wed Nov 08 11:37:33 UTC 2023","8307","TESTS","Income Page","TestIncomePage","","","Clear date in calendar (Income Page)","
+    Attempt to clear date in calendar using ""Clear"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date cleared in calendar when user click 'Clear' button in calendar.
+    "
+"passed","Wed Nov 08 11:31:28 UTC 2023","Wed Nov 08 11:31:42 UTC 2023","13861","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Temp Income)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Incomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Incomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List.
+    "
+"passed","Wed Nov 08 11:30:36 UTC 2023","Wed Nov 08 11:30:36 UTC 2023","462","TESTS","test_api","TestApiGet","","","test_check_get_method[post for last-5-outcomecash/]",""
+"passed","Wed Nov 08 11:50:04 UTC 2023","Wed Nov 08 11:50:11 UTC 2023","7685","TESTS","Saves Page","TestSavesPage","","","Set current date in calendar (Saves Page)","
+    Attempt to set current date in calendar using ""Today"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date set in calendar when user click 'Today' button in calendar.
+    "
+"passed","Wed Nov 08 11:42:58 UTC 2023","Wed Nov 08 11:43:08 UTC 2023","9869","TESTS","Outcome Page","TestOutcomePage","","","Shows Added Amount in Operation List (Temp)","
+    Attempt to add random amount to exist category in Temp Outcome list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Temp Outcome list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:40:48 UTC 2023","Wed Nov 08 11:40:58 UTC 2023","9882","TESTS","Outcome Page","TestOutcomePage","","","Cancel Delete Category operation from Temp Outcome list","
+    Attempt to cancel delete selected category operation from Temp Outcome list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Temp Outcome list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:34:53 UTC 2023","Wed Nov 08 11:35:09 UTC 2023","15933","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:30:35 UTC 2023","Wed Nov 08 11:30:35 UTC 2023","496","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for last-5-outcomecash/]",""
+"passed","Wed Nov 08 11:30:49 UTC 2023","Wed Nov 08 11:30:59 UTC 2023","9757","TESTS","Income Page","TestIncomePage","","","Add new category to Constant Income list","
+    Attempt to add a new category to Constant Income list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Constant income (DropList).
+    "
+"passed","Wed Nov 08 11:30:31 UTC 2023","Wed Nov 08 11:30:32 UTC 2023","476","TESTS","test_api","TestApiGet","","","test_check_get_method[post for income-categories/]",""
+"passed","Wed Nov 08 11:46:06 UTC 2023","Wed Nov 08 11:46:13 UTC 2023","7213","TESTS","Register Page","TestRegisterPage","","","Verify Login Field on Register Page","
+    Verify the login field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for login,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:30:36 UTC 2023","Wed Nov 08 11:30:37 UTC 2023","789","TESTS","test_api","TestApiGet","","","test_check_get_method[put for last-5-outcomecash/]",""
+"passed","Wed Nov 08 11:30:42 UTC 2023","Wed Nov 08 11:30:42 UTC 2023","458","TESTS","test_api","TestApiGet","","","test_check_get_method[put for outcome-categories/]",""
+"passed","Wed Nov 08 11:41:26 UTC 2023","Wed Nov 08 11:41:43 UTC 2023","17088","TESTS","Outcome Page","TestOutcomePage","","","Delete Category from Saves Outcome list","
+    Attempt to delete selected category from Temp Outcome list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the Saves list
+
+    Expected Result:
+    - The selected category is deleted from Saves Outcome list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:46:44 UTC 2023","Wed Nov 08 11:46:50 UTC 2023","6120","TESTS","Register Page","TestRegisterPage","","","Verify Password Field on Register Page","
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:41:45 UTC 2023","Wed Nov 08 11:42:02 UTC 2023","16957","TESTS","Outcome Page","TestOutcomePage","","","Archive Category from Saves Outcome list","
+    Attempt to archive selected category from Temp Outcome list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the Saves list
+
+    Expected Result:
+    - The selected category is archived from Saves Outcome list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:44:50 UTC 2023","Wed Nov 08 11:44:50 UTC 2023","133","TESTS","Register Page","TestRegisterPage","","","Open Register Page","
+    Redirect to the register page after 'registration' click on start page. 
+    
+    Precondition:
+    - Navigate to the start page.
+
+    Expected Result:
+    - The register page opens successfully in the browser.
+    - All necessary elements are visible.
+    "
+"passed","Wed Nov 08 11:30:38 UTC 2023","Wed Nov 08 11:30:38 UTC 2023","458","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for money-box-categories/]",""
+"passed","Wed Nov 08 11:40:23 UTC 2023","Wed Nov 08 11:40:34 UTC 2023","10721","TESTS","Outcome Page","TestOutcomePage","","","Archive Category from Temp Outcome list","
+    Attempt to archive selected category from Temp Outcome list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Temp Outcome list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:47:06 UTC 2023","Wed Nov 08 11:47:14 UTC 2023","8260","TESTS","Register Page","TestRegisterPage","","","Verify Password Field on Register Page","
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:30:38 UTC 2023","Wed Nov 08 11:30:39 UTC 2023","455","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for money-box-categories/]",""
+"passed","Wed Nov 08 11:30:39 UTC 2023","Wed Nov 08 11:30:40 UTC 2023","468","TESTS","test_api","TestApiGet","","","test_check_get_method[put for money-box-categories/]",""
+"passed","Wed Nov 08 11:38:26 UTC 2023","Wed Nov 08 11:38:35 UTC 2023","8758","TESTS","Outcome Page","TestOutcomePage","","","Add new category to Constant Outcome","
+    Attempt to add a new category to Constant Outcome list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Constant Outcome (DropList).
+    "
+"passed","Wed Nov 08 11:39:08 UTC 2023","Wed Nov 08 11:39:15 UTC 2023","6838","TESTS","Outcome Page","TestOutcomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Constant list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Constant Outcome category with a name more than 14 characters.
+    "
+"passed","Wed Nov 08 11:30:43 UTC 2023","Wed Nov 08 11:30:44 UTC 2023","478","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data name 0]",""
+"failed","Wed Nov 08 11:30:43 UTC 2023","Wed Nov 08 11:30:43 UTC 2023","460","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 1000]",""
+"passed","Wed Nov 08 11:30:40 UTC 2023","Wed Nov 08 11:30:41 UTC 2023","436","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for outcome-categories/]",""
+"passed","Wed Nov 08 11:36:51 UTC 2023","Wed Nov 08 11:37:15 UTC 2023","23869","TESTS","Income Page","TestIncomePage","","","Edit Amount in Operation List (Income)","
+    Attempt to edit amount in Operation list. User click 'edit' icon in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount edited and updated in Operation list after user click 'edit' icon in Item line in the list.
+    "
+"passed","Wed Nov 08 11:30:47 UTC 2023","Wed Nov 08 11:30:47 UTC 2023","457","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 1]",""
+"passed","Wed Nov 08 11:48:05 UTC 2023","Wed Nov 08 11:48:11 UTC 2023","5564","TESTS","Register Page","TestRegisterPage","","","Register with Existing User","
+    Attempt to register with an existing user's credentials.
+    Proper error message should be showed.
+
+    Precondition:
+    - User is on the Register Page.
+    - User is all ready registered in the system.
+
+    PostCondition:
+    - User is not re registered.
+    - User is on the Registration Page.
+
+    Expected Result:
+    - Registration should not be successful.
+    - Error message should be showed if user use exist login or email.
+    "
+"passed","Wed Nov 08 11:30:39 UTC 2023","Wed Nov 08 11:30:39 UTC 2023","475","TESTS","test_api","TestApiGet","","","test_check_get_method[post for money-box-categories/]",""
+"passed","Wed Nov 08 11:30:29 UTC 2023","Wed Nov 08 11:30:30 UTC 2023","950","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for income-categories/]",""
+"passed","Wed Nov 08 11:40:36 UTC 2023","Wed Nov 08 11:40:46 UTC 2023","10034","TESTS","Outcome Page","TestOutcomePage","","","Cancel Delete Category operation from Constant Outcome list","
+    Attempt to cancel delete selected category operation from Constant Outcome list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Constant Outcome list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:31:44 UTC 2023","Wed Nov 08 11:31:50 UTC 2023","6172","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Constant Income list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Constant income category with a name more than 14 characters.
+    "
+"passed","Wed Nov 08 11:49:15 UTC 2023","Wed Nov 08 11:49:24 UTC 2023","9106","TESTS","Saves Page","TestSavesPage","","","Exists Error Message does not shows in Modal Window repeat open (Saves)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in Saves list then close window and repeat.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in Saves list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in Saves List,
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:35:46 UTC 2023","Wed Nov 08 11:36:02 UTC 2023","16388","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (temp)","
+    Attempt to add random amount to exist category in Temp Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:39:17 UTC 2023","Wed Nov 08 11:39:24 UTC 2023","6901","TESTS","Outcome Page","TestOutcomePage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Temp list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Temp Outcome category with a name more than 14 characters.
+    "
+"passed","Wed Nov 08 11:48:45 UTC 2023","Wed Nov 08 11:48:53 UTC 2023","7862","TESTS","Saves Page","TestSavesPage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Saves)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Saves list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Saves list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Saves List.
+    "
+"passed","Wed Nov 08 11:46:18 UTC 2023","Wed Nov 08 11:46:26 UTC 2023","8218","TESTS","Register Page","TestRegisterPage","","","Verify Login Field on Register Page","
+    Verify the login field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for login,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:43:22 UTC 2023","Wed Nov 08 11:43:32 UTC 2023","9746","TESTS","Outcome Page","TestOutcomePage","","","Cancel Deleting Amount in Operation List","
+    Attempt to delete amount from Operation list. User clic 'x' in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
+    "
+"passed","Wed Nov 08 11:48:34 UTC 2023","Wed Nov 08 11:48:43 UTC 2023","8928","TESTS","Saves Page","TestSavesPage","","","Add new category to Saves list","
+    Attempt to add a new category to Saves list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Saves list.
+    "
+"passed","Wed Nov 08 11:30:33 UTC 2023","Wed Nov 08 11:30:33 UTC 2023","579","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for last-5-incomecash/]",""
+"passed","Wed Nov 08 11:35:29 UTC 2023","Wed Nov 08 11:35:44 UTC 2023","14682","TESTS","Income Page","TestIncomePage","","","Shows Added Amount in Operation List (temp)","
+    Attempt to add random amount to exist category in Temp Income list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Income list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:43:10 UTC 2023","Wed Nov 08 11:43:20 UTC 2023","9761","TESTS","Outcome Page","TestOutcomePage","","","Delete Amount in Operation List","
+    Attempt to delete amount from Operation list. User click 'x' in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
+    "
+"passed","Wed Nov 08 11:44:55 UTC 2023","Wed Nov 08 11:44:55 UTC 2023","75","TESTS","Register Page","TestRegisterPage","","","Check Already Registered Page","
+    Click on the ""Already Registered"" link and check the redirection, back to Start page.
+    
+    Preconditions:
+        
+    Expected result:
+    - User redirected back start page after click 'Already Registered' link on registration page. 
+    "
+"passed","Wed Nov 08 11:49:51 UTC 2023","Wed Nov 08 11:50:02 UTC 2023","10866","TESTS","Saves Page","TestSavesPage","","","Delete Category from Saves list","
+    Attempt to delete selected category from Saves list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Saves list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:32:00 UTC 2023","Wed Nov 08 11:32:08 UTC 2023","8035","TESTS","Income Page","TestIncomePage","","","Length Error Message does not shows in Modal Window repeat open(Constant Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Constant Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:30:34 UTC 2023","Wed Nov 08 11:30:35 UTC 2023","460","TESTS","test_api","TestApiGet","","","test_check_get_method[put for last-5-incomecash/]",""
+"passed","Wed Nov 08 11:46:55 UTC 2023","Wed Nov 08 11:47:01 UTC 2023","6119","TESTS","Register Page","TestRegisterPage","","","Verify Password Field on Register Page","
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:39:37 UTC 2023","Wed Nov 08 11:39:46 UTC 2023","8950","TESTS","Outcome Page","TestOutcomePage","","","Length Error Message does not shows in Modal Window repeat open(Temp)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that more then 14 chars in the Temp Outcomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name is more then 14 chars
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Temp Outcomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:48:27 UTC 2023","Wed Nov 08 11:48:32 UTC 2023","5566","TESTS","Register Page","TestRegisterPage","","","Register with Existing User","
+    Attempt to register with an existing user's credentials.
+    Proper error message should be showed.
+
+    Precondition:
+    - User is on the Register Page.
+    - User is all ready registered in the system.
+
+    PostCondition:
+    - User is not re registered.
+    - User is on the Registration Page.
+
+    Expected Result:
+    - Registration should not be successful.
+    - Error message should be showed if user use exist login or email.
+    "
+"passed","Wed Nov 08 11:30:44 UTC 2023","Wed Nov 08 11:30:45 UTC 2023","495","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 11]",""
+"passed","Wed Nov 08 11:30:47 UTC 2023","Wed Nov 08 11:30:47 UTC 2023","463","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 100]",""
+"passed","Wed Nov 08 11:43:47 UTC 2023","Wed Nov 08 11:43:55 UTC 2023","7595","TESTS","Outcome Page","TestOutcomePage","","","Set current date in calendar (Outcome Page)","
+    Attempt to set current date in calendar using ""Today"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date set in calendar when user click 'Today' button in calendar.
+    "
+"passed","Wed Nov 08 11:44:41 UTC 2023","Wed Nov 08 11:44:46 UTC 2023","4749","TESTS","Recovery Page","TestRecoveryPage","","","Check Recovery Send Email confirm msg","
+    Check Notification message shows up, when user setup valid Email to Email field
+    and press 'Восстановить' button.
+
+    Params:
+    - Valid email
+
+    Expected Result:
+    - Notification message is shows up, when user setup valid Email to Email field
+    and press 'Восстановить' button.
+    "
+"passed","Wed Nov 08 11:45:11 UTC 2023","Wed Nov 08 11:45:17 UTC 2023","6112","TESTS","Register Page","TestRegisterPage","","","Verify Email Field on Register Page","
+    Verify the email field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for email,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:48:55 UTC 2023","Wed Nov 08 11:49:02 UTC 2023","6803","TESTS","Saves Page","TestSavesPage","","","Error Message in Modal Window When New Category Name Is More Than 14 Characters (Saves list)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that is more than 14 characters.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name more than 14 characters
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Constant income category with a name more than 14 characters.
+    "
+"passed","Wed Nov 08 11:44:30 UTC 2023","Wed Nov 08 11:44:39 UTC 2023","9207","TESTS","Recovery Page","TestRecoveryPage","","","Check Recovery Email validation","
+    If user setup invalid values or empty to Email field in recovery page 
+    error message shows 'Обязательное поле' or 'Введёт некорректный email'.
+
+    Params:
+    - Empty field
+    - Wrong email (unregistered in the system)
+
+    Expected Result:
+    - After user filed email field in recovery form and click 'Recovery' button
+    error message shows up ('Обязательное поле' or 'Введёт некорректный email')
+    "
+"passed","Wed Nov 08 11:51:01 UTC 2023","Wed Nov 08 11:51:04 UTC 2023","3047","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:47:30 UTC 2023","Wed Nov 08 11:47:36 UTC 2023","6119","TESTS","Register Page","TestRegisterPage","","","Verify Password Field on Register Page","
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:43:34 UTC 2023","Wed Nov 08 11:43:45 UTC 2023","11744","TESTS","Outcome Page","TestOutcomePage","","","Edit Amount in Operation List","
+    Attempt to edit amount in Operation list. User click 'edit' icon in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount edited and updated in Operation list after user click 'edit' icon in Item line in the list.
+    "
+"passed","Wed Nov 08 11:49:26 UTC 2023","Wed Nov 08 11:49:37 UTC 2023","10910","TESTS","Saves Page","TestSavesPage","","","Archive Category from Saves list","
+    Attempt to archive selected category from Saves list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Saves list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:34:34 UTC 2023","Wed Nov 08 11:34:51 UTC 2023","16864","TESTS","Income Page","TestIncomePage","","","Delete Category from Temp Income list","
+    Attempt to delete selected category from Temp Income list
+    when user click 'Delete' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is deleted from Temp Income list
+    when user click 'Delete' button in modal window.
+    "
+"passed","Wed Nov 08 11:30:40 UTC 2023","Wed Nov 08 11:30:40 UTC 2023","603","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for outcome-categories/]",""
+"passed","Wed Nov 08 11:50:51 UTC 2023","Wed Nov 08 11:50:54 UTC 2023","3032","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:45:22 UTC 2023","Wed Nov 08 11:45:28 UTC 2023","6117","TESTS","Register Page","TestRegisterPage","","","Verify Email Field on Register Page","
+    Verify the email field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for email,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:43:57 UTC 2023","Wed Nov 08 11:44:07 UTC 2023","9840","TESTS","Outcome Page","TestOutcomePage","","","Clear date in calendar (Outcome Page)","
+    Attempt to clear date in calendar using ""Clear"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date cleared in calendar when user click 'Clear' button in calendar.
+    "
+"passed","Wed Nov 08 11:30:34 UTC 2023","Wed Nov 08 11:30:34 UTC 2023","460","TESTS","test_api","TestApiGet","","","test_check_get_method[post for last-5-incomecash/]",""
+"passed","Wed Nov 08 11:40:10 UTC 2023","Wed Nov 08 11:40:21 UTC 2023","10756","TESTS","Outcome Page","TestOutcomePage","","","Archive Category from Constant Outcome list","
+    Attempt to archive selected category from Constant Outcome list
+    when user click 'Archive' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is archived from Constant Outcome list
+    when user click 'Archive' button in modal window.
+    "
+"passed","Wed Nov 08 11:48:15 UTC 2023","Wed Nov 08 11:48:22 UTC 2023","6435","TESTS","Register Page","TestRegisterPage","","","Register with Existing User","
+    Attempt to register with an existing user's credentials.
+    Proper error message should be showed.
+
+    Precondition:
+    - User is on the Register Page.
+    - User is all ready registered in the system.
+
+    PostCondition:
+    - User is not re registered.
+    - User is on the Registration Page.
+
+    Expected Result:
+    - Registration should not be successful.
+    - Error message should be showed if user use exist login or email.
+    "
+"passed","Wed Nov 08 11:42:34 UTC 2023","Wed Nov 08 11:42:44 UTC 2023","9874","TESTS","Outcome Page","TestOutcomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Outcome list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Outcome list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:46:31 UTC 2023","Wed Nov 08 11:46:39 UTC 2023","8225","TESTS","Register Page","TestRegisterPage","","","Verify Login Field on Register Page","
+    Verify the login field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for login,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:31:11 UTC 2023","Wed Nov 08 11:31:26 UTC 2023","14779","TESTS","Income Page","TestIncomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Constant Income)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Incomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Incomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List.
+    "
+"passed","Wed Nov 08 11:42:22 UTC 2023","Wed Nov 08 11:42:32 UTC 2023","9823","TESTS","Outcome Page","TestOutcomePage","","","Shows Added Amount in Operation List (Constant)","
+    Attempt to add random amount to exist category in Constant Outcome list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Constant Outcome list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:30:32 UTC 2023","Wed Nov 08 11:30:32 UTC 2023","475","TESTS","test_api","TestApiGet","","","test_check_get_method[put for income-categories/]",""
+"passed","Wed Nov 08 11:32:39 UTC 2023","Wed Nov 08 11:32:54 UTC 2023","15085","TESTS","Income Page","TestIncomePage","","","Exists Error Message does not shows in Modal Window repeat open(Temp Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Incomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Temp Incomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:31:01 UTC 2023","Wed Nov 08 11:31:09 UTC 2023","8006","TESTS","Income Page","TestIncomePage","","","Add new category to Temp Income list","
+    Attempt to add a new category to Temp Income list using the criteria:
+    - New category name is less than 14 characters
+    - New category name is not exist in the list
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - New category is added to Temp income (DropList).
+    "
+"passed","Wed Nov 08 11:30:30 UTC 2023","Wed Nov 08 11:30:31 UTC 2023","554","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for income-categories/]",""
+"passed","Wed Nov 08 11:30:35 UTC 2023","Wed Nov 08 11:30:36 UTC 2023","454","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for last-5-outcomecash/]",""
+"passed","Wed Nov 08 11:45:00 UTC 2023","Wed Nov 08 11:45:06 UTC 2023","6116","TESTS","Register Page","TestRegisterPage","","","Verify Email Field on Register Page","
+    Verify the email field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for email,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:42:46 UTC 2023","Wed Nov 08 11:42:56 UTC 2023","9828","TESTS","Outcome Page","TestOutcomePage","","","Shows Added Amount in Operation List (Temp)","
+    Attempt to add random amount to exist category in Temp Outcome list.
+    After user click ""Add"" button on the page, amount shows adds to category.
+    Operation shows in the bottom page section in Operation List.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+    - Positive amount
+
+    Expected Result:
+    - Amount added to existing category in Temp Outcome list.
+    - Added amount shows in Operation list.
+    "
+"passed","Wed Nov 08 11:33:56 UTC 2023","Wed Nov 08 11:34:12 UTC 2023","16008","TESTS","Income Page","TestIncomePage","","","Cancel Delete Category operation from Temp Income list","
+    Attempt to cancel delete selected category operation from Temp Income list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - The selected category is not deleted from Temp Income list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:44:14 UTC 2023","Wed Nov 08 11:44:17 UTC 2023","2984","TESTS","Recovery Page","TestRecoveryPage","","","Check Recovery Return link","
+    Redirect back to start page after 'return back' link click.
+
+    Precondition:
+
+    Expected Result:
+    - User redirected back to start page after 'return back' link click.
+    "
+"passed","Wed Nov 08 11:50:46 UTC 2023","Wed Nov 08 11:50:49 UTC 2023","3016","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:45:55 UTC 2023","Wed Nov 08 11:46:01 UTC 2023","6114","TESTS","Register Page","TestRegisterPage","","","Verify Login Field on Register Page","
+    Verify the login field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for login,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:42:04 UTC 2023","Wed Nov 08 11:42:20 UTC 2023","16179","TESTS","Outcome Page","TestOutcomePage","","","Cancel Delete Category operation from Saves Outcome list","
+    Attempt to cancel delete selected category operation from Saves Outcome list
+    when user click 'Cancel' button in modal window.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the Saves list
+
+    Expected Result:
+    - The selected category is not deleted from Saves Outcome list
+    when user click 'Cancel' button in modal window.
+    "
+"passed","Wed Nov 08 11:37:35 UTC 2023","Wed Nov 08 11:37:59 UTC 2023","23901","TESTS","Income Page","TestIncomePage","","","test_total_amount_const_income",""
+"passed","Wed Nov 08 11:44:09 UTC 2023","Wed Nov 08 11:44:12 UTC 2023","2934","TESTS","Recovery Page","TestRecoveryPage","","","Open Recovery Page","
+    Redirect to the recovery page after 'password recovery' click on start page. 
+
+    Precondition:
+    - Navigate to the start page.
+
+    Expected Result:
+    - The recovery page opens successfully in the browser.
+    - All necessary elements are visible.
+    "
+"passed","Wed Nov 08 11:30:31 UTC 2023","Wed Nov 08 11:30:31 UTC 2023","440","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for income-categories/]",""
+"passed","Wed Nov 08 11:38:01 UTC 2023","Wed Nov 08 11:38:24 UTC 2023","23038","TESTS","Income Page","TestIncomePage","","","test_total_amount_temp_income",""
+"passed","Wed Nov 08 11:30:37 UTC 2023","Wed Nov 08 11:30:38 UTC 2023","557","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for money-box-categories/]",""
+"passed","Wed Nov 08 11:38:58 UTC 2023","Wed Nov 08 11:39:06 UTC 2023","7897","TESTS","Outcome Page","TestOutcomePage","","","Error Message in Modal Window When New Category Name Already Exists in the List (Temp)","
+    An error message is shown in the modal window when the user tries to add a new category
+    with a name that already exists in the Temp Outcomes list.
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Temp Outcomes list
+
+    Expected Result:
+    - An error message is shown in the modal window when the user fills the proper field in the modal window
+    trying to add a new Outcome category which already exists in the Temp Outcomes List.
+    "
+"passed","Wed Nov 08 11:37:17 UTC 2023","Wed Nov 08 11:37:23 UTC 2023","6167","TESTS","Income Page","TestIncomePage","","","Set current date in calendar (Income Page)","
+    Attempt to set current date in calendar using ""Today"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date set in calendar when user click 'Today' button in calendar.
+    "
+"passed","Wed Nov 08 11:44:19 UTC 2023","Wed Nov 08 11:44:28 UTC 2023","9061","TESTS","Recovery Page","TestRecoveryPage","","","Check Recovery Email validation","
+    If user setup invalid values or empty to Email field in recovery page 
+    error message shows 'Обязательное поле' or 'Введёт некорректный email'.
+
+    Params:
+    - Empty field
+    - Wrong email (unregistered in the system)
+
+    Expected Result:
+    - After user filed email field in recovery form and click 'Recovery' button
+    error message shows up ('Обязательное поле' or 'Введёт некорректный email')
+    "
+"passed","Wed Nov 08 11:36:28 UTC 2023","Wed Nov 08 11:36:49 UTC 2023","21374","TESTS","Income Page","TestIncomePage","","","Cancel Deleting Amount in Operation List","
+    Attempt to delete amount from Operation list. User clic 'x' in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
+    "
+"passed","Wed Nov 08 11:30:41 UTC 2023","Wed Nov 08 11:30:42 UTC 2023","459","TESTS","test_api","TestApiGet","","","test_check_get_method[post for outcome-categories/]",""
+"passed","Wed Nov 08 11:50:30 UTC 2023","Wed Nov 08 11:50:34 UTC 2023","4089","TESTS","Start Page","TestStartPage","","","Start Page Login with Valid Credentials","
+    Attempt to log in using valid user credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with valid credentials passes.
+    "
+"passed","Wed Nov 08 11:30:44 UTC 2023","Wed Nov 08 11:30:44 UTC 2023","470","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 101]",""
+"passed","Wed Nov 08 11:50:56 UTC 2023","Wed Nov 08 11:50:59 UTC 2023","2980","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Wed Nov 08 11:30:46 UTC 2023","Wed Nov 08 11:30:46 UTC 2023","465","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data name 1]",""
+"passed","Wed Nov 08 11:30:33 UTC 2023","Wed Nov 08 11:30:34 UTC 2023","450","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for last-5-incomecash/]",""
+"passed","Wed Nov 08 11:32:21 UTC 2023","Wed Nov 08 11:32:37 UTC 2023","16184","TESTS","Income Page","TestIncomePage","","","Exists Error Message does not shows in Modal Window repeat open(Constant Income)","
+    An exist error message is does not shows in the modal window when the user tries to add a new category
+    with a name that already exists in the Constant Incomes list then close window and repeat. 
+
+    Precondition:
+    - User uses valid login and password
+    - Category name already exists in the Constant Incomes list
+
+    Expected Result:
+    - An error message does not shows in the modal window when the user fills the proper field in the modal window
+    trying to add a new income category which already exists in the Constant Incomes List, 
+    then close window and try again.
+    "
+"passed","Wed Nov 08 11:47:51 UTC 2023","Wed Nov 08 11:48:00 UTC 2023","9349","TESTS","Register Page","TestRegisterPage","","","Verify Password Confirmation Field on Register Page","
+    Verify the password confirmation field on the Register Page.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If values is not match in both fields (for password and confirm),
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:50:13 UTC 2023","Wed Nov 08 11:50:23 UTC 2023","9663","TESTS","Saves Page","TestSavesPage","","","Clear date in calendar (Saves Page)","
+    Attempt to clear date in calendar using ""Clear"" button:
+
+    Precondition:
+    - User uses valid login and password
+
+    Expected Result:
+    - Current date cleared in calendar when user click 'Clear' button in calendar.
+    "
+"passed","Wed Nov 08 11:47:19 UTC 2023","Wed Nov 08 11:47:25 UTC 2023","6126","TESTS","Register Page","TestRegisterPage","","","Verify Password Field on Register Page","
+    Verify the password field on the Register Page with different values.
+    If value is no valid, proper error message should be displayed.
+
+    Precondition:
+    - User is on the Register Page.
+
+    Expected Result:
+    - If value is not match with proper requirements for password,
+    an error message should be displayed as specified in 'error'.
+    "
+"passed","Wed Nov 08 11:36:04 UTC 2023","Wed Nov 08 11:36:26 UTC 2023","21451","TESTS","Income Page","TestIncomePage","","","Delete Amount in Operation List (Income)","
+    Attempt to delete amount from Operation list. User clic 'x' in the List item line.
+
+    Precondition:
+    - User uses valid login and password
+    - One o more category exist in the list
+
+    Expected Result:
+    - Amount deleted from Operation list after user click 'x' in Item line in the list.
+    "
+"failed","Wed Nov 08 11:30:45 UTC 2023","Wed Nov 08 11:30:46 UTC 2023","623","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 1001]",""
