@@ -1,9 +1,9 @@
 import time
-
 import allure
 import pytest
-from TESTS.utils import randomize_float, randomize_latin_string
 from TESTS.params import params_amount_values
+from TESTS.settings import user_login, user_pass
+from TESTS.utils import randomize_float, randomize_latin_string
 from PAGES.Locators import CategoriesLocators, OperationListLocators
 
 
@@ -66,8 +66,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_category_name_error_constant_income(self, income_page):
+    def test_check_exist_category_name_error_constant_income(self, start_page, income_page):
+        # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_const.error_name_exist()
 
     @allure.title("Error Message in Modal Window When New Category Name Already Exists in the List (Temp Income)")
@@ -86,8 +90,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_category_name_error_temp_income(self, income_page):
+    def test_check_exist_category_name_error_temp_income(self, start_page, income_page):
+        # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_temp.error_name_exist()
 
     @allure.title("Error Message in Modal Window When New Category Name "
@@ -193,8 +201,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_error_repeat_constant_income(self, income_page):
+    def test_check_exist_error_repeat_constant_income(self, start_page, income_page):
+        # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_const.repeat_error_name_exist()
 
     @allure.title("Exists Error Message does not shows in Modal Window repeat open(Temp Income)")
@@ -214,8 +226,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.dropdown_errors
-    def test_check_exist_error_repeat_temp_income(self, income_page):
+    def test_check_exist_error_repeat_temp_income(self, start_page, income_page):
+        # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_temp.repeat_error_name_exist()
 
     # #########################CATEGORIES DELETE ######################################################
@@ -235,8 +251,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_archive_random_constant_income(self, income_page):
+    def test_check_archive_random_constant_income(self, start_page, income_page):
+        # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_const.category_modal_action("В архив")
 
     @allure.title("Archive Category from Temp Income list")
@@ -255,8 +275,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_archive_random_temp_income(self, income_page):
+    def test_check_archive_random_temp_income(self, start_page, income_page):
+        # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_temp.category_modal_action("В архив")
 
     @allure.title("Cancel Delete Category operation from Constant Income list")
@@ -275,8 +299,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_cancel_random_constant_income(self, income_page):
+    def test_check_cancel_random_constant_income(self, start_page, income_page):
+        # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_const.category_modal_action("Отмена")
 
     @allure.title("Cancel Delete Category operation from Temp Income list")
@@ -295,8 +323,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_cancel_random_temp_income(self, income_page):
+    def test_check_cancel_random_temp_income(self, start_page, income_page):
+        # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_temp.category_modal_action("Отмена")
 
     @allure.title("Delete Category from Constant Income list")
@@ -315,8 +347,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_delete_random_constant_income(self, income_page):
+    def test_check_delete_random_constant_income(self, start_page, income_page):
+        # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_const.category_modal_action("Удалить")
 
     @allure.title("Delete Category from Temp Income list")
@@ -335,8 +371,12 @@ class TestIncomePage:
     """)
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.dropdown_modal_actions
-    def test_check_delete_random_temp_income(self, income_page):
+    def test_check_delete_random_temp_income(self, start_page, income_page):
+        # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
+        start_page.start_page_login(user_login, user_pass, False)
         income_temp.category_modal_action("Удалить")
 
     # ########################-OPERATION LIST-######################################################
@@ -360,6 +400,10 @@ class TestIncomePage:
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
     def test_check_operation_list_constant_income(self, income_page, value):
+        # Precondition:
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
                                    add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
                                    add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
@@ -385,6 +429,10 @@ class TestIncomePage:
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
     def test_check_operation_list_temp_income(self, income_page, value):
+        # Precondition:
+        income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
         income_const = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
                                    add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
                                    add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp
@@ -406,6 +454,15 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_del_btn_income(self, income_page):
+        # Precondition:
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
+                                   add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
+                                   add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
+                                   )
+        income_const.operation_add_amount(randomize_float(10000))
+        # Test:
         income = income_page(btn_name_locator=OperationListLocators.oper_modal_delete_btn)
         income.operations_del(btn_name="delete")
 
@@ -424,6 +481,15 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_cancel_btn_income(self, income_page):
+        # Precondition:
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
+                                   add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
+                                   add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
+                                   )
+        income_const.operation_add_amount(randomize_float(10000))
+        # Test:
         income = income_page(btn_name_locator=OperationListLocators.oper_modal_cancel_btn)
         income.operations_del(btn_name="cancel")
 
@@ -442,6 +508,15 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     def test_check_operation_edit_btn_income(self, income_page):
+        # Precondition:
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
+                                   add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
+                                   add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
+                                   )
+        income_const.operation_add_amount(randomize_float(10000))
+        # Test:
         income = income_page()
         income.operation_edit_btn(randomize_float(10000))
 
@@ -481,6 +556,10 @@ class TestIncomePage:
         income.calendar_clear_btn()
 
     def test_total_amount_const_income(self, income_page):
+        # Precondition:
+        income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
+        income_const.add_category(randomize_latin_string(10))
+        # Test:
         income = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown,
                              add_amount_field=CategoriesLocators.add_amount_to_category_field_const,
                              add_amount_btn=CategoriesLocators.add_amount_to_category_btn_const
@@ -493,6 +572,10 @@ class TestIncomePage:
         assert new_amount == old_amount + summ
 
     def test_total_amount_temp_income(self, income_page):
+        # Precondition:
+        income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
+        income_temp.add_category(randomize_latin_string(10))
+        # Test:
         income = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown,
                              add_amount_field=CategoriesLocators.add_amount_to_category_field_temp,
                              add_amount_btn=CategoriesLocators.add_amount_to_category_btn_temp

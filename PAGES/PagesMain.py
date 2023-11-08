@@ -62,7 +62,7 @@ class PagesMain(Main):
                                   text_keys=exist_name
                                   )
         self.do_click("Добавить", CategoriesLocators.modal_window_add_name_value_btn)
-        time.sleep(1)
+        time.sleep(2)
 
         assert self.wait_element(by_locator=CategoriesLocators.exist_name_error)
 

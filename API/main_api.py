@@ -1,50 +1,50 @@
 import requests
 import json
-from TESTS.settings import user_login, user_pass
+from functools import wraps
 
 
 class MainApi:
-    def __init__(self):
+    def __init__(self, key, endpoint, data=None):
         self.main_url = "https://dev.freenance.store/api/"
-        self.login = user_login,
-        self.password = user_pass
-        self.header = {}
-        self.auth_key = None
-
-    def get_api_key(self):
-        api_url = self.main_url + str("auth/token/login/")
-        self.header["Content-Type"] = "application/json"
-
-        data = {
-            'username': 'newtestuser',
-            'password': '123QWEqwe',
-            'auth_token': '01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1'
+        self.token = key
+        self.endpoint = endpoint
+        self.header = {
+            "Content-Type": "application/json",
+            "Authorization": self.token
         }
-        req = requests.post(api_url, json=data, headers=self.header)
-        status = req.status_code
+        self.api_url = self.main_url + str(endpoint)
+        self.data = data
+
+    def set_requests(self, method: str):
+        if method == "get":
+            req = requests.get(self.api_url, headers=self.header, data=self.data)
+        elif method == "post":
+            req = requests.post(self.api_url, headers=self.header, json=self.data)
+        elif method == "put":
+            req = requests.put(self.api_url, headers=self.header, data=self.data)
+        elif method == "del":
+            req = requests.delete(self.api_url, headers=self.header, data=self.data)
+
+        return req
+
+    def print_requests(self, request):
+        status = request.status_code
         try:
-            result = req.json()
-            self.auth_key = result
+            result = request.json()
         except json.decoder.JSONDecodeError:
-            result = req.text
+            result = request.text
+        return status
 
-        api_url = self.main_url + str("last-5-incomecash/")
-        req = requests.get()
+    def playload_values(self, playload: dict):
+        return playload.values()
 
-        return status, result
+    def playload_keys(self, playload: dict):
+        return playload.keys()
 
-    def get_last_five(self):
-        api_url = self.main_url + str("last-5-incomecash/")
-        self.header["Content-Type"] = "application/json"
-        self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
-        req = requests.get(api_url, headers=self.header)
-        status = req.status_code
-        try:
-            result = req.json()
-        except json.decoder.JSONDecodeError:
-            result = req.text
+    def check_playload_with_data(self, data: dict, playload: dict):
+        common_keys = set(data.keys()).intersection(playload.keys())
+        return bool(common_keys)
 
-        return status, result
 
     def delete_last_one(self):
         api_url = self.main_url + str("delete-incomecash/1975")
@@ -53,22 +53,22 @@ class MainApi:
         req = requests.delete(api_url, headers=self.header)
         status = req.status_code
         return status
-
-    def delete_last_five(self):
-        api_url = self.main_url + str("last-5-incomecash/")
-        self.header["Content-Type"] = "application/json"
-        self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
-        req = requests.get(api_url, headers=self.header)
-        result = req.json()
-        for item in result:
-            id = item["id"]
-            print(id)
-            api_url = self.main_url + str(f"delete-incomecash/{id}")
-            self.header["Content-Type"] = "application/json"
-            self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
-            req = requests.delete(api_url, headers=self.header)
-            status = req.status_code
-        return status
+    #
+    # def delete_last_five(self):
+    #     api_url = self.main_url + str("last-5-incomecash/")
+    #     self.header["Content-Type"] = "application/json"
+    #     self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
+    #     req = requests.get(api_url, headers=self.header)
+    #     result = req.json()
+    #     for item in result:
+    #         id = item["id"]
+    #         print(id)
+    #         api_url = self.main_url + str(f"delete-incomecash/{id}")
+    #         self.header["Content-Type"] = "application/json"
+    #         self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
+    #         req = requests.delete(api_url, headers=self.header)
+    #         status = req.status_code
+    #     return status
 
     def get_categories(self):
         api_url = self.main_url + str("categories/")
@@ -79,21 +79,6 @@ class MainApi:
         for item in result:
             print(item)
             # print(item['categoryName'], item["category_id"])
-        status = req.status_code
-        return status
-
-    def post_categories(self):
-        api_url = self.main_url + str("categories/")
-        self.header["Content-Type"] = "application/json"
-        self.header["accept-language"] = "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
-        self.header["authorization"] = "Token 01dc3b27c45fe9dcbd0c3c59d604e7539bdd5af1"
-
-        data = {
-            'categoryName': '123456789 01234512345 6789012345',
-            'category_type': 'constant',
-            'income_outcome': 'income',
-        }
-        req = requests.post(api_url, json=data, headers=self.header)
         status = req.status_code
         return status
 

@@ -135,7 +135,7 @@ jobs:
 #      - name: Run UI-tests
 #        run: |
 #          if [ "${{ github.event.inputs.deployment_target }}" == "test_api" ]; then
-#            pytest TESTS/test_api.py --alluredir=allure-results
+#            pytest TESTS/test_api_get_last_five_out.py --alluredir=allure-results
 #          elif [ "${{ github.event.inputs.deployment_target }}" == "start_page" ]; then
 #            pytest TESTS/test_start_page.py --alluredir=allure-results
 #          elif [ "${{ github.event.inputs.deployment_target }}" == "register_page" ]; then
