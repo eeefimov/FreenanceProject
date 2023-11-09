@@ -1,0 +1,6 @@
+ic| response.json(): {'categoryName': 'p',
+                      'category_id': 5619,
+                      'category_type': 'constant',
+                      'income_outcome': 'outcome',
+                      'is_hidden': False,
+                      'user_id': 263}
