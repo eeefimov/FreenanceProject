@@ -131,4 +131,3 @@ params_api_post_category = [
     pytest.param(randomize_latin_string(100), randomize_latin_string(10), 400, id="wrong come 100"),
     pytest.param("", randomize_latin_string(10), 400, id="wrong come name ''")
 ]
-

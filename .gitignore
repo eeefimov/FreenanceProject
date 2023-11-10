@@ -6,5 +6,5 @@ allure-results
 allure-report
 senior_test_runs.yml
 TESTS/__pycache__/
-
+.env
 

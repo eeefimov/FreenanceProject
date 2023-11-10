@@ -36,6 +36,8 @@ class CategoriesLocators:
     total_amount = (By.XPATH, "(//div[@class='main']//input)[1]")
     balance_aside = (By.XPATH, "(//div[@class='aside']//input)[1]")
 
+    saves_warning_msg = (By.XPATH, "//div[contains(text(), 'Вы можете добавить не более')]")
+
 
 class OperationListLocators:
     oper_list_values = (By.XPATH, "//div[@class='transactions']//*[@id]")

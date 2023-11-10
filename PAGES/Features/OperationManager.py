@@ -1,19 +1,13 @@
-from selenium.webdriver.common.by import By
-
-
 class OperationManager:
     @staticmethod
     def operation_list_check_amount(item_id):
-        list_element_locator = (By.XPATH, f"//div[@class='transactions']//*[@id='{item_id}']//div[3]")
+        list_element_locator = ("xpath", f"//div[@class='transactions']//*[@id='{item_id}']//div[3]")
         return list_element_locator
-
 
     @staticmethod
     def operation_list_btn(btn_name: str, item_id):
-
         i = 1 if btn_name in ["delete", "cancel"] else 2
-
-        btn_locator = (By.XPATH, f"//div[@class='transactions']//*[@id='{item_id}']//div[4]//button[{i}]")
+        btn_locator = ("xpath", f"//div[@class='transactions']//*[@id='{item_id}']//div[4]//button[{i}]")
         print(i)
         return btn_locator
 

@@ -6,8 +6,6 @@ from PAGES.Features.OperationManager import OperationManager
 from PAGES.Locators import CalendarLocators, CategoriesLocators, OperationListLocators
 from TESTS.utils import current_date, calendar_date
 
-#NEW TRY!!!!!!!!
-
 
 class PagesMain(Main):
 

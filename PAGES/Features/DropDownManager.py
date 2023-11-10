@@ -1,6 +1,5 @@
 import random
 from PAGES.Main import Main
-from selenium.webdriver.common.by import By
 
 
 class DropDownManager(Main):
@@ -22,26 +21,25 @@ class DropDownManager(Main):
 
     @staticmethod
     def list_selected_element(index):
-        list_element_idexed = (By.XPATH, f"//div[@class='dropdown-item false' and @index='{index}']")
+        list_element_idexed = ("xpath", f"//div[@class='dropdown-item false' and @index='{index}']")
         return list_element_idexed
 
     @staticmethod
     def list_selected_del_btn(index):
-        del_btn_locator = (By.XPATH, f"//div[@index='{index}']//span[@title='Удаление категории']")
+        del_btn_locator = ("xpath", f"//div[@index='{index}']//span[@title='Удаление категории']")
         return del_btn_locator
 
     @staticmethod
     def modal_action(action_name):
-        locator = (By.XPATH, f"//div[contains(@class, 'Modal_active')]//button[text()= '{action_name}']")
+        locator = ("xpath", f"//div[contains(@class, 'Modal_active')]//button[text()= '{action_name}']")
         return locator
-
 
     @staticmethod
     def set_selected_name_locator(name):
-        locator = By.XPATH, f"//div[@class='dropdown-selected-value' and contains(text(), '{name}')]"
+        locator = ("xpath", f"//div[@class='dropdown-selected-value' and contains(text(), '{name}')]")
         return locator
 
     @staticmethod
     def set_selected_index_locator(index):
-        locator = (By.XPATH, f"//div[@index='{index}']")
+        locator = ("xpath", f"//div[@index='{index}']")
         return locator

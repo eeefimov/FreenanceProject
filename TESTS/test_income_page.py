@@ -398,7 +398,7 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
-    def test_check_operation_list_constant_income(self, income_page, value):
+    def test_check_operation_list_constant_add_income(self, income_page, value):
         # Precondition:
         income_const = income_page(list_name="Постоянные", list_locator=CategoriesLocators.constant_dropdown)
         income_const.add_category(randomize_latin_string(10))
@@ -427,7 +427,7 @@ class TestIncomePage:
     @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.operation_list
     @pytest.mark.parametrize("value", params_amount_values)
-    def test_check_operation_list_temp_income(self, income_page, value):
+    def test_check_operation_list_temp_add_income(self, income_page, value):
         # Precondition:
         income_temp = income_page(list_name="Временные", list_locator=CategoriesLocators.temp_dropdown)
         income_temp.add_category(randomize_latin_string(10))
