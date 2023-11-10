@@ -1,6 +1,0 @@
-ic| response.json(): {'categoryName': 'dOMbucsUWX',
-                      'category_id': 5618,
-                      'category_type': 'constant',
-                      'income_outcome': 'outcome',
-                      'is_hidden': False,
-                      'user_id': 263}

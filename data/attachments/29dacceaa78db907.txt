@@ -1,1 +1,0 @@
-ic| response.json(): {'income_outcome': ['Значения cokcFggJea нет среди допустимых вариантов.']}

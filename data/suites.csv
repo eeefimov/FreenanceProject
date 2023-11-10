@@ -1,38 +1,80 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Nov 09 10:18:46 UTC 2023","Thu Nov 09 10:18:46 UTC 2023","532","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for last-5-outcomecash/]",""
-"passed","Thu Nov 09 10:18:44 UTC 2023","Thu Nov 09 10:18:44 UTC 2023","466","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for last-5-incomecash/]",""
-"passed","Thu Nov 09 10:19:03 UTC 2023","Thu Nov 09 10:19:04 UTC 2023","486","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come name '']",""
-"passed","Thu Nov 09 10:18:56 UTC 2023","Thu Nov 09 10:18:57 UTC 2023","464","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for outcome-categories/]",""
-"passed","Thu Nov 09 10:18:39 UTC 2023","Thu Nov 09 10:18:41 UTC 2023","1718","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for income-categories/]",""
-"passed","Thu Nov 09 10:19:03 UTC 2023","Thu Nov 09 10:19:03 UTC 2023","486","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 100]",""
-"passed","Thu Nov 09 10:19:00 UTC 2023","Thu Nov 09 10:19:01 UTC 2023","490","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 101]",""
-"passed","Thu Nov 09 10:18:58 UTC 2023","Thu Nov 09 10:18:59 UTC 2023","696","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 10]",""
-"passed","Thu Nov 09 10:18:57 UTC 2023","Thu Nov 09 10:18:58 UTC 2023","475","TESTS","test_api","TestApiGet","","","test_check_get_method[put for outcome-categories/]",""
-"passed","Thu Nov 09 10:19:01 UTC 2023","Thu Nov 09 10:19:01 UTC 2023","490","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 11]",""
-"passed","Thu Nov 09 10:18:42 UTC 2023","Thu Nov 09 10:18:43 UTC 2023","586","TESTS","test_api","TestApiGet","","","test_check_get_method[put for income-categories/]",""
-"passed","Thu Nov 09 10:18:45 UTC 2023","Thu Nov 09 10:18:45 UTC 2023","593","TESTS","test_api","TestApiGet","","","test_check_get_method[post for last-5-incomecash/]",""
-"passed","Thu Nov 09 10:18:45 UTC 2023","Thu Nov 09 10:18:46 UTC 2023","762","TESTS","test_api","TestApiGet","","","test_check_get_method[put for last-5-incomecash/]",""
-"passed","Thu Nov 09 10:18:47 UTC 2023","Thu Nov 09 10:18:50 UTC 2023","2739","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for last-5-outcomecash/]",""
-"passed","Thu Nov 09 10:18:56 UTC 2023","Thu Nov 09 10:18:56 UTC 2023","464","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for outcome-categories/]",""
-"passed","Thu Nov 09 10:18:53 UTC 2023","Thu Nov 09 10:18:53 UTC 2023","467","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for money-box-categories/]",""
-"passed","Thu Nov 09 10:19:02 UTC 2023","Thu Nov 09 10:19:03 UTC 2023","486","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 10]",""
-"passed","Thu Nov 09 10:18:46 UTC 2023","Thu Nov 09 10:18:47 UTC 2023","573","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for last-5-outcomecash/]",""
-"passed","Thu Nov 09 10:18:57 UTC 2023","Thu Nov 09 10:18:57 UTC 2023","480","TESTS","test_api","TestApiGet","","","test_check_get_method[post for outcome-categories/]",""
-"passed","Thu Nov 09 10:18:42 UTC 2023","Thu Nov 09 10:18:42 UTC 2023","490","TESTS","test_api","TestApiGet","","","test_check_get_method[post for income-categories/]",""
-"passed","Thu Nov 09 10:18:50 UTC 2023","Thu Nov 09 10:18:50 UTC 2023","492","TESTS","test_api","TestApiGet","","","test_check_get_method[post for last-5-outcomecash/]",""
-"passed","Thu Nov 09 10:18:50 UTC 2023","Thu Nov 09 10:18:51 UTC 2023","484","TESTS","test_api","TestApiGet","","","test_check_get_method[put for last-5-outcomecash/]",""
-"passed","Thu Nov 09 10:18:44 UTC 2023","Thu Nov 09 10:18:45 UTC 2023","563","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for last-5-incomecash/]",""
-"failed","Thu Nov 09 10:19:01 UTC 2023","Thu Nov 09 10:19:02 UTC 2023","481","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 1001]",""
-"passed","Thu Nov 09 10:18:54 UTC 2023","Thu Nov 09 10:18:54 UTC 2023","485","TESTS","test_api","TestApiGet","","","test_check_get_method[put for money-box-categories/]",""
-"passed","Thu Nov 09 10:19:02 UTC 2023","Thu Nov 09 10:19:02 UTC 2023","473","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data name 1]",""
-"passed","Thu Nov 09 10:19:00 UTC 2023","Thu Nov 09 10:19:00 UTC 2023","474","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data name 0]",""
-"passed","Thu Nov 09 10:18:43 UTC 2023","Thu Nov 09 10:18:43 UTC 2023","509","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for last-5-incomecash/]",""
-"passed","Thu Nov 09 10:18:58 UTC 2023","Thu Nov 09 10:18:58 UTC 2023","558","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 100]",""
-"passed","Thu Nov 09 10:18:41 UTC 2023","Thu Nov 09 10:18:42 UTC 2023","461","TESTS","test_api","TestApiGet","","","test_check_get_method[No key for income-categories/]",""
-"passed","Thu Nov 09 10:18:54 UTC 2023","Thu Nov 09 10:18:56 UTC 2023","1462","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for outcome-categories/]",""
-"passed","Thu Nov 09 10:18:52 UTC 2023","Thu Nov 09 10:18:53 UTC 2023","747","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for money-box-categories/]",""
-"passed","Thu Nov 09 10:18:41 UTC 2023","Thu Nov 09 10:18:41 UTC 2023","561","TESTS","test_api","TestApiGet","","","test_check_get_method[Invalid key for income-categories/]",""
-"passed","Thu Nov 09 10:18:53 UTC 2023","Thu Nov 09 10:18:54 UTC 2023","584","TESTS","test_api","TestApiGet","","","test_check_get_method[post for money-box-categories/]",""
-"failed","Thu Nov 09 10:18:59 UTC 2023","Thu Nov 09 10:19:00 UTC 2023","576","TESTS","test_api","TestApiGet","","","test_check_post_method[post_data, name 1000]",""
-"passed","Thu Nov 09 10:18:51 UTC 2023","Thu Nov 09 10:18:52 UTC 2023","1325","TESTS","test_api","TestApiGet","","","test_check_get_method[Valid key for money-box-categories/]",""
-"passed","Thu Nov 09 10:19:03 UTC 2023","Thu Nov 09 10:19:03 UTC 2023","482","TESTS","test_api","TestApiGet","","","test_check_post_method[wrong come 1]",""
+"passed","Fri Nov 10 22:58:09 UTC 2023","Fri Nov 10 22:58:16 UTC 2023","7149","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:58:01 UTC 2023","Fri Nov 10 22:58:06 UTC 2023","5838","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:57:44 UTC 2023","Fri Nov 10 22:57:50 UTC 2023","6228","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:57:52 UTC 2023","Fri Nov 10 22:57:58 UTC 2023","6581","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:57:10 UTC 2023","Fri Nov 10 22:57:16 UTC 2023","6690","TESTS","Start Page","TestStartPage","","","Open Start Page","
+    Go to the start page of the website and verify the presence of essential elements.
+
+    Precondition:
+    - Navigate to the start page.
+
+    Expected Result:
+    - The start page opens successfully in the browser.
+    - All necessary elements are visible.
+    "
+"passed","Fri Nov 10 22:57:36 UTC 2023","Fri Nov 10 22:57:41 UTC 2023","5865","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:57:29 UTC 2023","Fri Nov 10 22:57:33 UTC 2023","4462","TESTS","Start Page","TestStartPage","","","Start Page Login with Invalid Credentials","
+    Attempt to log in using various combinations of invalid credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with invalid credentials fails.
+    - The login error message is displayed for invalid login and/or password combinations and empty fields.
+    "
+"passed","Fri Nov 10 22:57:18 UTC 2023","Fri Nov 10 22:57:27 UTC 2023","8399","TESTS","Start Page","TestStartPage","","","Start Page Login with Valid Credentials","
+    Attempt to log in using valid user credentials on the Start page.
+
+    Precondition:
+    - Navigate to the Start page.
+
+    Expected Result:
+    - Login with valid credentials passes.
+    "
